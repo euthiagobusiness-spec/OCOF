@@ -1,0 +1,28 @@
+<svg width="520" height="156" viewBox="0 0 520 156" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Logotipo Guilherme Alvarenga</title>
+  <desc id="desc">Monograma GA dourado com assinatura Guilherme Alvarenga e slogan Direcao, Disciplina, Legado.</desc>
+  <defs>
+    <linearGradient id="gold" x1="18" y1="12" x2="486" y2="152" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F4F4F4"/>
+      <stop offset="0.36" stop-color="#B8B8B8"/>
+      <stop offset="0.72" stop-color="#D8D8D8"/>
+      <stop offset="1" stop-color="#666666"/>
+    </linearGradient>
+    <filter id="glow" x="-40" y="-40" width="220" height="220" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feGaussianBlur stdDeviation="7" result="blur"/>
+      <feColorMatrix in="blur" type="matrix" values="0 0 0 0 0.72 0 0 0 0 0.72 0 0 0 0 0.72 0 0 0 0.42 0"/>
+      <feBlend in2="SourceGraphic" mode="screen"/>
+    </filter>
+  </defs>
+  <rect x="3" y="3" width="150" height="150" rx="8" stroke="url(#gold)" stroke-width="2"/>
+  <rect x="12" y="12" width="132" height="132" rx="5" stroke="#B8B8B8" stroke-opacity="0.28"/>
+  <g filter="url(#glow)">
+    <text x="34" y="89" fill="url(#gold)" font-family="Georgia, 'Times New Roman', serif" font-size="62" font-weight="700">G</text>
+    <text x="76" y="114" fill="url(#gold)" font-family="Georgia, 'Times New Roman', serif" font-size="58" font-weight="700">A</text>
+  </g>
+  <path d="M30 124H123" stroke="url(#gold)" stroke-width="2" stroke-linecap="round"/>
+  <text x="184" y="55" fill="#F4F4F4" font-family="Inter, Arial, sans-serif" font-size="25" font-weight="700" letter-spacing="8">GUILHERME</text>
+  <text x="184" y="91" fill="url(#gold)" font-family="Inter, Arial, sans-serif" font-size="20" font-weight="600" letter-spacing="7">ALVARENGA</text>
+  <path d="M184 108H462" stroke="#B8B8B8" stroke-opacity="0.55"/>
+  <text x="184" y="132" fill="#B8B8B8" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="500" letter-spacing="3">DIRECAO. DISCIPLINA. LEGADO.</text>
+</svg>

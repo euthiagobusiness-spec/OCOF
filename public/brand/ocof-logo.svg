@@ -1,0 +1,31 @@
+<svg width="420" height="120" viewBox="0 0 420 120" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">OCOF</title>
+  <desc id="desc">Wordmark OCOF com formas circulares e acabamento institucional.</desc>
+  <defs>
+    <linearGradient id="metal" x1="0" x2="0" y1="0" y2="120" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#F4F4F4"/>
+      <stop offset="0.48" stop-color="#D8D8D8"/>
+      <stop offset="1" stop-color="#B8B8B8"/>
+    </linearGradient>
+    <linearGradient id="inner" x1="0" x2="420" y1="0" y2="120" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#F4F4F4"/>
+      <stop offset="1" stop-color="#666666"/>
+    </linearGradient>
+    <filter id="relief" x="-10%" y="-20%" width="120%" height="140%" color-interpolation-filters="sRGB">
+      <feDropShadow dx="0" dy="7" stdDeviation="4" flood-color="#0B0B0B" flood-opacity="0.45"/>
+      <feDropShadow dx="0" dy="-2" stdDeviation="1" flood-color="#F4F4F4" flood-opacity="0.22"/>
+    </filter>
+  </defs>
+  <g filter="url(#relief)" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="59" cy="60" r="39" stroke="url(#metal)" stroke-width="18"/>
+    <circle cx="59" cy="60" r="23" stroke="url(#inner)" stroke-width="7"/>
+    <path d="M177 35C167 25 153 20 139 21C116 23 99 40 98 61C97 83 114 101 138 101C152 101 166 96 176 86" stroke="url(#metal)" stroke-width="18"/>
+    <path d="M163 45C157 39 149 36 140 37C127 38 116 48 115 61C114 75 125 85 140 85C149 85 157 82 163 76" stroke="url(#inner)" stroke-width="7"/>
+    <circle cx="243" cy="60" r="39" stroke="url(#metal)" stroke-width="18"/>
+    <circle cx="243" cy="60" r="23" stroke="url(#inner)" stroke-width="7"/>
+    <path d="M318 99V23H388" stroke="url(#metal)" stroke-width="18"/>
+    <path d="M318 61H374" stroke="url(#metal)" stroke-width="18"/>
+    <path d="M334 99V37H388" stroke="url(#inner)" stroke-width="6"/>
+    <path d="M334 61H374" stroke="url(#inner)" stroke-width="6"/>
+  </g>
+</svg>

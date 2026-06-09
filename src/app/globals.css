@@ -1,0 +1,123 @@
+﻿@import "tailwindcss";
+
+:root {
+  --wine: #F4F4F4;
+  --brown: #D8D8D8;
+  --rose: #B8B8B8;
+  --nude: #666666;
+  --ivory: #0B0B0B;
+  --wine-rgb: 244 244 244;
+  --brown-rgb: 216 216 216;
+  --rose-rgb: 184 184 184;
+  --nude-rgb: 102 102 102;
+  --ivory-rgb: 11 11 11;
+  --background: var(--ivory);
+  --foreground: var(--wine);
+  --surface: rgb(var(--nude-rgb) / 0.26);
+  --surface-raised: rgb(var(--nude-rgb) / 0.40);
+  --surface-soft: rgb(var(--rose-rgb) / 0.12);
+  --line: rgb(var(--wine-rgb) / 0.12);
+  --line-strong: rgb(var(--wine-rgb) / 0.24);
+  --muted: var(--brown);
+  --muted-secondary: var(--rose);
+  --highlight: var(--wine);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  background: var(--background);
+}
+
+body {
+  min-width: 320px;
+  overflow-x: clip;
+  background:
+    radial-gradient(circle at 50% -14%, rgb(var(--wine-rgb) / 0.12), transparent 34rem),
+    radial-gradient(circle at 88% 16%, rgb(var(--rose-rgb) / 0.14), transparent 30rem),
+    linear-gradient(
+      180deg,
+      var(--ivory) 0%,
+      rgb(var(--nude-rgb) / 0.32) 48%,
+      var(--ivory) 100%
+    );
+  background-attachment: fixed;
+  background-size: 100% 100%;
+  color: var(--foreground);
+  font-family: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+}
+
+body::before {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  content: "";
+  opacity: 0.46;
+  filter: blur(34px);
+  background:
+    radial-gradient(circle at 18% 22%, rgb(var(--wine-rgb) / 0.10), transparent 24rem),
+    radial-gradient(circle at 78% 12%, rgb(var(--nude-rgb) / 0.24), transparent 22rem),
+    radial-gradient(circle at 52% 84%, rgb(var(--rose-rgb) / 0.12), transparent 26rem);
+}
+
+::selection {
+  background: var(--wine);
+  color: var(--ivory);
+}
+
+img {
+  max-width: 100%;
+}
+
+a,
+button {
+  -webkit-tap-highlight-color: transparent;
+}
+
+.font-display {
+  font-family: var(--font-display), ui-sans-serif, system-ui, sans-serif;
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+.text-pretty {
+  text-wrap: pretty;
+}
+
+.metal-text {
+  background: linear-gradient(
+    180deg,
+    var(--wine) 0%,
+    var(--rose) 100%
+  );
+  background-clip: text;
+  color: transparent;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}
