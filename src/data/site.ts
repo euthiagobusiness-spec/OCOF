@@ -48,20 +48,20 @@ export const site = {
       "A OCOF traduz organização, autoridade e alto padrão em cada ponto de contato da marca.",
     gallery: [
       {
-        src: "/brand/visual-lounge.svg",
-        alt: "Ambiente institucional neutro com mobiliário moderno em tons de cinza, preto e branco.",
+        src: "/brand/photo-office-lounge.webp",
+        alt: "Lounge executivo em escritório premium com sofá cinza, mesa preta e divisórias de vidro.",
       },
       {
-        src: "/brand/visual-studio.svg",
-        alt: "Ambiente corporativo escuro com parede institucional e iluminação circular.",
+        src: "/brand/photo-office-workspace.webp",
+        alt: "Mesa executiva escura em escritório moderno com sala de reunião ao fundo.",
       },
       {
-        src: "/brand/visual-materials.svg",
-        alt: "Composição de materiais institucionais em tons neutros.",
+        src: "/brand/photo-office-materials.webp",
+        alt: "Composição realista de materiais corporativos em tons de preto, cinza e branco.",
       },
       {
-        src: "/brand/visual-workspace.svg",
-        alt: "Espaço de trabalho executivo em tons neutros.",
+        src: "/brand/photo-office-meeting.webp",
+        alt: "Sala de reunião executiva com mesa escura, cadeiras pretas e paredes cinza.",
       },
     ],
   },
@@ -164,8 +164,8 @@ export const site = {
         details:
           "Planejamento estratégico, posicionamento, ofertas, copywriting, conteúdo, tráfego pago, páginas, automações e métricas.",
         image: {
-          src: "/brand/visual-workspace.svg",
-          alt: "Mesa executiva com tela de operação digital em tons neutros.",
+          src: "/brand/photo-office-workspace.webp",
+          alt: "Mesa executiva escura em escritório moderno com materiais organizados.",
         },
         icon: Rocket,
       },
@@ -176,8 +176,8 @@ export const site = {
         details:
           "Presença, conversão, cadência comercial e análise contínua para transformar atenção em receita.",
         image: {
-          src: "/brand/visual-lounge.svg",
-          alt: "Ambiente institucional premium com mobiliário cinza e preto.",
+          src: "/brand/photo-office-lounge.webp",
+          alt: "Lounge corporativo premium em tons neutros.",
         },
         icon: TrendingUp,
       },
@@ -188,8 +188,8 @@ export const site = {
         details:
           "Clareza de mensagem, narrativa institucional, percepção premium e consistência de marca.",
         image: {
-          src: "/brand/visual-materials.svg",
-          alt: "Materiais institucionais neutros com textura corporativa.",
+          src: "/brand/photo-office-materials.webp",
+          alt: "Materiais institucionais realistas em preto, cinza e branco.",
         },
         icon: Gem,
       },
@@ -200,8 +200,8 @@ export const site = {
         details:
           "Fluxos, rituais, responsabilidades, indicadores e integração entre branding, vendas, tráfego e conteúdo.",
         image: {
-          src: "/brand/visual-studio.svg",
-          alt: "Parede institucional escura com iluminação circular em tons neutros.",
+          src: "/brand/photo-office-meeting.webp",
+          alt: "Sala de reunião executiva com estética corporativa neutra.",
         },
         icon: Workflow,
       },
@@ -406,8 +406,8 @@ export const site = {
       "A OCOF estrutura o caminho entre posicionamento, atenção, vendas e escala para transformar crescimento digital em processo.",
     cta: "Fale com a OCOF",
     image: {
-      src: "/brand/visual-workspace.svg",
-      alt: "Ambiente executivo escuro usado como atmosfera institucional da OCOF.",
+      src: "/brand/photo-office-meeting.webp",
+      alt: "Sala de reunião executiva usada como atmosfera institucional da OCOF.",
     },
   },
   footer: {

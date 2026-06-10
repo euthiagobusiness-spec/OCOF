@@ -27,7 +27,7 @@ export function ServiceCard({
         <figure className="relative h-44 overflow-hidden border-b border-[var(--line)] bg-[var(--ivory)] sm:h-52">
           <Image
             alt={image.alt}
-            className="object-cover opacity-90 transition duration-500 group-hover:scale-[1.025]"
+            className="object-cover grayscale opacity-90 transition duration-500 group-hover:scale-[1.025]"
             fill
             loading="eager"
             sizes="(min-width: 768px) 46vw, 92vw"

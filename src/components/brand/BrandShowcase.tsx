@@ -9,7 +9,7 @@ export function BrandShowcase() {
       <div className="relative min-h-64 overflow-hidden rounded-[6px] border border-[var(--line)] bg-[var(--ivory)] sm:col-span-2">
         <Image
           alt={lounge.alt}
-          className="object-cover"
+          className="object-cover grayscale"
           fill
           priority
           sizes="(min-width: 1024px) 46vw, 90vw"
@@ -34,7 +34,7 @@ export function BrandShowcase() {
       <div className="relative min-h-56 overflow-hidden rounded-[6px] border border-[var(--line)] bg-[var(--ivory)]">
         <Image
           alt={studio.alt}
-          className="object-cover"
+          className="object-cover grayscale"
           fill
           sizes="(min-width: 1024px) 22vw, 45vw"
           src={studio.src}
@@ -45,7 +45,7 @@ export function BrandShowcase() {
       <div className="relative min-h-56 overflow-hidden rounded-[6px] border border-[var(--line)] bg-[var(--ivory)]">
         <Image
           alt={materials.alt}
-          className="object-cover"
+          className="object-cover grayscale"
           fill
           sizes="(min-width: 1024px) 22vw, 45vw"
           src={materials.src}

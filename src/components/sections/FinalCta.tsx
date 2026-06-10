@@ -13,7 +13,7 @@ export function FinalCta() {
           <Image
             alt=""
             aria-hidden="true"
-            className="absolute inset-0 z-0 object-cover opacity-25"
+            className="absolute inset-0 z-0 object-cover opacity-25 grayscale"
             fill
             loading="eager"
             sizes="92vw"

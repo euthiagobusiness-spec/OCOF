@@ -69,7 +69,7 @@ function VisualPanel({
     >
       <Image
         alt={alt}
-        className="object-cover transition duration-300 hover:scale-[1.015]"
+        className="object-cover grayscale transition duration-300 hover:scale-[1.015]"
         fill
         priority={priority}
         sizes={sizes}
