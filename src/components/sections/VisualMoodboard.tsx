@@ -14,30 +14,30 @@ export function VisualMoodboard() {
       title={site.visuals.title}
     >
       <MotionReveal>
-        <div className="grid gap-4 lg:grid-cols-[1.25fr_0.75fr]">
+        <div className="grid gap-3 sm:gap-4 lg:grid-cols-[1.25fr_0.75fr]">
           <VisualPanel
             alt={lounge.alt}
-            className="min-h-[430px] lg:min-h-[620px]"
+            className="aspect-[4/5] min-h-[420px] sm:aspect-[16/10] sm:min-h-[480px] lg:aspect-auto lg:min-h-[620px]"
             priority
             sizes="(min-width: 1024px) 58vw, 92vw"
             src={lounge.src}
           />
-          <div className="grid gap-4">
+          <div className="grid gap-3 sm:gap-4">
             <VisualPanel
               alt={studio.alt}
-              className="min-h-[220px]"
+              className="aspect-[16/10] min-h-[210px] sm:min-h-[240px] lg:min-h-[220px]"
               sizes="(min-width: 1024px) 34vw, 92vw"
               src={studio.src}
             />
             <VisualPanel
               alt={materials.alt}
-              className="min-h-[196px] lg:min-h-[190px]"
+              className="aspect-[16/10] min-h-[210px] sm:min-h-[240px] lg:min-h-[190px]"
               sizes="(min-width: 1024px) 34vw, 92vw"
               src={materials.src}
             />
             <VisualPanel
               alt={workspace.alt}
-              className="min-h-[196px] lg:min-h-[190px]"
+              className="aspect-[16/10] min-h-[210px] sm:min-h-[240px] lg:min-h-[190px]"
               sizes="(min-width: 1024px) 34vw, 92vw"
               src={workspace.src}
             />
@@ -69,13 +69,14 @@ function VisualPanel({
     >
       <Image
         alt={alt}
-        className="object-cover grayscale transition duration-300 hover:scale-[1.015]"
+        className="object-cover transition duration-300 hover:scale-[1.015]"
         fill
         priority={priority}
+        quality={86}
         sizes={sizes}
         src={src}
       />
-      <div className="absolute inset-0 bg-[linear-gradient(180deg,transparent_58%,rgb(var(--ivory-rgb)_/_0.55)_100%)]" />
+      <div className="absolute inset-0 bg-[linear-gradient(180deg,rgb(var(--ivory-rgb)_/_0.04)_0%,transparent_58%,rgb(var(--ivory-rgb)_/_0.48)_100%)]" />
     </figure>
   );
 }

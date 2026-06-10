@@ -13,13 +13,13 @@ export function FinalCta() {
           <Image
             alt=""
             aria-hidden="true"
-            className="absolute inset-0 z-0 object-cover opacity-25 grayscale"
+            className="absolute inset-0 z-0 object-cover opacity-24"
             fill
-            loading="eager"
+            quality={82}
             sizes="92vw"
             src={site.finalCta.image.src}
           />
-          <div className="absolute inset-0 z-0 bg-[linear-gradient(90deg,rgb(var(--ivory-rgb)_/_0.92),rgb(var(--ivory-rgb)_/_0.76),rgb(var(--ivory-rgb)_/_0.88))]" />
+          <div className="absolute inset-0 z-0 bg-[linear-gradient(90deg,rgb(var(--ivory-rgb)_/_0.93),rgb(var(--ivory-rgb)_/_0.80),rgb(var(--ivory-rgb)_/_0.90))]" />
           <span className="relative z-10 grid size-16 place-items-center rounded-[8px] border border-[rgb(var(--rose-rgb)_/_0.48)] text-[var(--rose)]">
             <MessageCircle aria-hidden="true" className="size-8" />
           </span>

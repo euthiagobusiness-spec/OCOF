@@ -24,17 +24,16 @@ export function ServiceCard({
   return (
     <Card className="group flex h-full min-h-[460px] flex-col overflow-hidden p-0">
       {image ? (
-        <figure className="relative h-44 overflow-hidden border-b border-[var(--line)] bg-[var(--ivory)] sm:h-52">
+        <figure className="relative aspect-[16/10] min-h-44 overflow-hidden border-b border-[var(--line)] bg-[var(--ivory)] sm:min-h-52">
           <Image
             alt={image.alt}
-            className="object-cover grayscale opacity-90 transition duration-500 group-hover:scale-[1.025]"
+            className="object-cover transition duration-500 group-hover:scale-[1.025]"
             fill
-            loading="eager"
-            sizes="(min-width: 768px) 46vw, 92vw"
+            quality={84}
+            sizes="(min-width: 1024px) 23vw, (min-width: 768px) 46vw, 92vw"
             src={image.src}
           />
-          <div className="absolute inset-0 bg-[linear-gradient(180deg,transparent_22%,rgb(var(--ivory-rgb)_/_0.72)_100%)]" />
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_12%,rgb(var(--wine-rgb)_/_0.18),transparent_28rem)]" />
+          <div className="absolute inset-0 bg-[linear-gradient(180deg,rgb(var(--ivory-rgb)_/_0.02)_0%,transparent_34%,rgb(var(--ivory-rgb)_/_0.62)_100%)]" />
         </figure>
       ) : null}
       <div className="flex flex-1 flex-col p-6 sm:p-7">

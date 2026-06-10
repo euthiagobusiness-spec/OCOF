@@ -15,7 +15,7 @@ export function Hero() {
 
       <div className="mx-auto grid max-w-7xl gap-10 px-5 sm:px-8">
         <div className="grid items-center gap-10 lg:grid-cols-[0.9fr_1.1fr]">
-          <MotionReveal className="relative z-10 min-w-0">
+          <MotionReveal className="relative z-10 min-w-0" immediate>
             <div className="mb-6 flex items-center gap-3 text-xs font-semibold uppercase text-[rgb(var(--wine-rgb)_/_0.52)]">
               <span className="h-px w-16 bg-[var(--line-strong)]" />
               Operação estratégica digital
@@ -48,12 +48,12 @@ export function Hero() {
             </div>
           </MotionReveal>
 
-          <MotionReveal className="relative" delay={0.1}>
+          <MotionReveal className="relative" delay={0.1} immediate>
             <BrandShowcase />
           </MotionReveal>
         </div>
 
-        <MotionReveal delay={0.16}>
+        <MotionReveal delay={0.16} immediate>
           <div className="grid grid-cols-3 gap-3 border-y border-[var(--line)] py-5">
             {site.hero.metrics.map((metric) => (
               <MetricCard key={metric.label} {...metric} />
