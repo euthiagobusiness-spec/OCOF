@@ -16,11 +16,14 @@ export function ProcessStep({
   icon,
 }: ProcessStepProps) {
   return (
-    <Card className="relative flex h-full min-h-[300px] flex-col overflow-hidden">
-      <div className="absolute right-5 top-5 font-display text-6xl font-semibold leading-none text-[rgb(var(--wine-rgb)_/_0.05)]">
+    <Card className="relative isolate flex h-full min-h-[300px] flex-col overflow-hidden bg-[linear-gradient(145deg,rgb(var(--wine-rgb)_/_0.075),rgb(var(--nude-rgb)_/_0.24))]">
+      <div className="absolute inset-x-6 top-24 -z-10 h-px bg-[linear-gradient(90deg,var(--line-strong),transparent)]" />
+      <div className="absolute right-5 top-5 -z-10 font-display text-6xl font-semibold leading-none text-[rgb(var(--wine-rgb)_/_0.045)]">
         {number}
       </div>
-      <IconBadge icon={icon} />
+      <div className="relative z-10 w-fit bg-[rgb(var(--ivory-rgb)_/_0.68)]">
+        <IconBadge icon={icon} />
+      </div>
       <p className="mt-8 text-sm font-semibold uppercase text-[var(--muted)]">
         Etapa {number}
       </p>
