@@ -1,7 +1,8 @@
-﻿import { ImageResponse } from "next/og";
+/* eslint-disable @next/next/no-img-element */
+import { ImageResponse } from "next/og";
 
 export const runtime = "edge";
-export const alt = "OCOF | Construímos operações de crescimento";
+export const alt = "OCOF | Construimos operacoes de crescimento";
 export const size = {
   width: 1200,
   height: 630,
@@ -42,15 +43,18 @@ export default function Image() {
             zIndex: 1,
           }}
         >
-          <div
-            style={{
-              fontSize: 104,
-              letterSpacing: -6,
-              fontWeight: 800,
-              color: "#F4F4F4",
-            }}
-          >
-            OCOF
+          <div style={{ display: "flex", width: 360, height: 126 }}>
+            <img
+              alt="OCOF"
+              height={126}
+              src="https://ocof.vercel.app/brand/ocof-logo-official-wordmark.png"
+              style={{
+                objectFit: "contain",
+                width: "100%",
+                height: "100%",
+              }}
+              width={360}
+            />
           </div>
           <div
             style={{
@@ -58,7 +62,7 @@ export default function Image() {
               color: "#D8D8D8",
             }}
           >
-            Ousadia • Constância • Organização • Foco
+            Ousadia * Constancia * Organizacao * Foco
           </div>
         </div>
         <div
@@ -79,7 +83,7 @@ export default function Image() {
               textTransform: "uppercase",
             }}
           >
-            Construímos operações de crescimento.
+            Construimos operacoes de crescimento.
           </div>
           <div
             style={{
@@ -87,7 +91,7 @@ export default function Image() {
               color: "#B8B8B8",
             }}
           >
-            Estratégia. Execução. Processos escaláveis.
+            Estrategia. Execucao. Processos escalaveis.
           </div>
         </div>
       </div>

@@ -4,7 +4,7 @@ import { Section } from "@/components/ui/Section";
 import { site } from "@/data/site";
 
 export function VisualMoodboard() {
-  const [lounge, studio, materials, workspace] = site.visuals.gallery;
+  const [dashboard, planning, materials, meeting] = site.visuals.gallery;
 
   return (
     <Section
@@ -16,18 +16,18 @@ export function VisualMoodboard() {
       <MotionReveal>
         <div className="grid gap-3 sm:gap-4 lg:grid-cols-[1.25fr_0.75fr]">
           <VisualPanel
-            alt={lounge.alt}
+            alt={dashboard.alt}
             className="aspect-[4/5] min-h-[420px] sm:aspect-[16/10] sm:min-h-[480px] lg:aspect-auto lg:min-h-[620px]"
             priority
             sizes="(min-width: 1024px) 58vw, 92vw"
-            src={lounge.src}
+            src={dashboard.src}
           />
           <div className="grid gap-3 sm:gap-4">
             <VisualPanel
-              alt={studio.alt}
+              alt={planning.alt}
               className="aspect-[16/10] min-h-[210px] sm:min-h-[240px] lg:min-h-[220px]"
               sizes="(min-width: 1024px) 34vw, 92vw"
-              src={studio.src}
+              src={planning.src}
             />
             <VisualPanel
               alt={materials.alt}
@@ -36,10 +36,10 @@ export function VisualMoodboard() {
               src={materials.src}
             />
             <VisualPanel
-              alt={workspace.alt}
+              alt={meeting.alt}
               className="aspect-[16/10] min-h-[210px] sm:min-h-[240px] lg:min-h-[190px]"
               sizes="(min-width: 1024px) 34vw, 92vw"
-              src={workspace.src}
+              src={meeting.src}
             />
           </div>
         </div>

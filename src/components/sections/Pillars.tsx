@@ -8,9 +8,10 @@ export function Pillars() {
     <Section
       className="border-y border-[var(--line)] bg-[var(--surface)]"
       eyebrow={site.pillars.eyebrow}
+      id="pilares"
       title={site.pillars.title}
     >
-      <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
+      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
         {site.pillars.items.map((pillar, index) => (
           <MotionReveal delay={index * 0.04} key={pillar.title}>
             <PillarCard {...pillar} />

@@ -38,7 +38,7 @@ export const site = {
     terms: "/termos",
   },
   assets: {
-    logo: "/brand/ocof-logo.svg",
+    logo: "/brand/ocof-logo-official-wordmark-transparent.png",
     og: "/opengraph-image",
   },
   visuals: {
@@ -48,20 +48,20 @@ export const site = {
       "A OCOF traduz organização, autoridade e alto padrão em cada ponto de contato da marca.",
     gallery: [
       {
-        src: "/brand/ocof-office-lounge-color.webp",
-        alt: "Lounge executivo realista com sofá cinza, iluminação quente discreta, mesa preta e divisórias de vidro.",
+        src: "/brand/ocof-table-dashboard.webp",
+        alt: "Mesa de operação digital com laptop, caderno, mouse, caneta e materiais estratégicos em tons neutros.",
       },
       {
-        src: "/brand/ocof-office-workspace-color.webp",
-        alt: "Mesa executiva escura em escritório moderno com sala de reunião ao fundo e iluminação corporativa natural.",
+        src: "/brand/ocof-table-planning.webp",
+        alt: "Mesa de planejamento com agenda aberta, caderno preto, laptop, canetas e relatórios em tons neutros.",
       },
       {
-        src: "/brand/ocof-office-materials-color.webp",
-        alt: "Composição realista de materiais corporativos em tons neutros com luz quente suave.",
+        src: "/brand/ocof-table-materials.webp",
+        alt: "Composição de agendas, cadernos, caneta, tablet e materiais institucionais sobre mesa grafite.",
       },
       {
-        src: "/brand/ocof-office-meeting-color.webp",
-        alt: "Sala de reunião executiva realista com mesa escura, cadeiras pretas, paredes cinza e iluminação quente.",
+        src: "/brand/ocof-table-meeting.webp",
+        alt: "Reunião estratégica vista pela mesa, com notebooks, cadernos, canetas e relatórios.",
       },
     ],
   },
@@ -164,8 +164,8 @@ export const site = {
         details:
           "Planejamento estratégico, posicionamento, ofertas, copywriting, conteúdo, tráfego pago, páginas, automações e métricas.",
         image: {
-          src: "/brand/ocof-office-workspace-color.webp",
-          alt: "Mesa executiva escura em escritório moderno com materiais organizados.",
+          src: "/brand/ocof-table-planning.webp",
+          alt: "Mesa de planejamento com agenda, laptop, cadernos e canetas organizados.",
         },
         icon: Rocket,
       },
@@ -176,8 +176,8 @@ export const site = {
         details:
           "Presença, conversão, cadência comercial e análise contínua para transformar atenção em receita.",
         image: {
-          src: "/brand/ocof-office-lounge-color.webp",
-          alt: "Lounge corporativo premium em tons neutros.",
+          src: "/brand/ocof-table-dashboard.webp",
+          alt: "Mesa de operação digital com laptop, caderno, mouse e materiais de análise.",
         },
         icon: TrendingUp,
       },
@@ -188,8 +188,8 @@ export const site = {
         details:
           "Clareza de mensagem, narrativa institucional, percepção premium e consistência de marca.",
         image: {
-          src: "/brand/ocof-office-materials-color.webp",
-          alt: "Materiais institucionais realistas em preto, cinza e branco.",
+          src: "/brand/ocof-table-materials.webp",
+          alt: "Agendas, cadernos, tablet e caneta em composição institucional neutra.",
         },
         icon: Gem,
       },
@@ -200,8 +200,8 @@ export const site = {
         details:
           "Fluxos, rituais, responsabilidades, indicadores e integração entre branding, vendas, tráfego e conteúdo.",
         image: {
-          src: "/brand/ocof-office-meeting-color.webp",
-          alt: "Sala de reunião executiva com estética corporativa neutra.",
+          src: "/brand/ocof-table-meeting.webp",
+          alt: "Reunião estratégica sobre mesa escura com notebooks, relatórios e canetas.",
         },
         icon: Workflow,
       },
@@ -406,8 +406,8 @@ export const site = {
       "A OCOF estrutura o caminho entre posicionamento, atenção, vendas e escala para transformar crescimento digital em processo.",
     cta: "Fale com a OCOF",
     image: {
-      src: "/brand/ocof-office-meeting-color.webp",
-      alt: "Sala de reunião executiva usada como atmosfera institucional da OCOF.",
+      src: "/brand/ocof-table-meeting.webp",
+      alt: "Mesa de reunião estratégica com notebooks, cadernos, canetas e relatórios.",
     },
   },
   footer: {

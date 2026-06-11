@@ -21,11 +21,15 @@ export function Logo({ compact = false, className }: LogoProps) {
       <span className="flex min-w-0 flex-col">
         <Image
           alt="OCOF"
-          className={compact ? "h-auto w-28" : "h-auto w-36"}
-          height={120}
+          className={cn(
+            "object-contain mix-blend-screen",
+            compact ? "h-auto w-28" : "h-auto w-36",
+          )}
+          height={205}
           loading="eager"
+          priority
           src={site.assets.logo}
-          width={420}
+          width={590}
         />
         {compact ? null : (
           <span className="mt-1 hidden text-[0.64rem] font-semibold uppercase leading-4 text-[var(--muted)] sm:block">
