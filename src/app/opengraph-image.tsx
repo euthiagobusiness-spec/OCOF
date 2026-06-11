@@ -47,7 +47,7 @@ export default function Image() {
             <img
               alt="OCOF"
               height={126}
-              src="https://ocof.vercel.app/brand/ocof-logo-official-wordmark.png"
+              src="https://ocof.vercel.app/brand/ocof-logo-official-wordmark-transparent.png"
               style={{
                 objectFit: "contain",
                 width: "100%",

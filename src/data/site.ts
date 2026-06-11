@@ -48,19 +48,19 @@ export const site = {
       "A OCOF traduz organização, autoridade e alto padrão em cada ponto de contato da marca.",
     gallery: [
       {
-        src: "/brand/ocof-table-dashboard.webp",
+        src: "/brand/ocof-table-dashboard-branded.webp",
         alt: "Mesa de operação digital com laptop, caderno, mouse, caneta e materiais estratégicos em tons neutros.",
       },
       {
-        src: "/brand/ocof-table-planning.webp",
+        src: "/brand/ocof-table-planning-branded.webp",
         alt: "Mesa de planejamento com agenda aberta, caderno preto, laptop, canetas e relatórios em tons neutros.",
       },
       {
-        src: "/brand/ocof-table-materials.webp",
+        src: "/brand/ocof-table-materials-branded.webp",
         alt: "Composição de agendas, cadernos, caneta, tablet e materiais institucionais sobre mesa grafite.",
       },
       {
-        src: "/brand/ocof-table-meeting.webp",
+        src: "/brand/ocof-table-meeting-branded.webp",
         alt: "Reunião estratégica vista pela mesa, com notebooks, cadernos, canetas e relatórios.",
       },
     ],
@@ -164,7 +164,7 @@ export const site = {
         details:
           "Planejamento estratégico, posicionamento, ofertas, copywriting, conteúdo, tráfego pago, páginas, automações e métricas.",
         image: {
-          src: "/brand/ocof-table-planning.webp",
+          src: "/brand/ocof-table-planning-branded.webp",
           alt: "Mesa de planejamento com agenda, laptop, cadernos e canetas organizados.",
         },
         icon: Rocket,
@@ -176,7 +176,7 @@ export const site = {
         details:
           "Presença, conversão, cadência comercial e análise contínua para transformar atenção em receita.",
         image: {
-          src: "/brand/ocof-table-dashboard.webp",
+          src: "/brand/ocof-table-dashboard-branded.webp",
           alt: "Mesa de operação digital com laptop, caderno, mouse e materiais de análise.",
         },
         icon: TrendingUp,
@@ -188,7 +188,7 @@ export const site = {
         details:
           "Clareza de mensagem, narrativa institucional, percepção premium e consistência de marca.",
         image: {
-          src: "/brand/ocof-table-materials.webp",
+          src: "/brand/ocof-table-materials-branded.webp",
           alt: "Agendas, cadernos, tablet e caneta em composição institucional neutra.",
         },
         icon: Gem,
@@ -200,7 +200,7 @@ export const site = {
         details:
           "Fluxos, rituais, responsabilidades, indicadores e integração entre branding, vendas, tráfego e conteúdo.",
         image: {
-          src: "/brand/ocof-table-meeting.webp",
+          src: "/brand/ocof-table-meeting-branded.webp",
           alt: "Reunião estratégica sobre mesa escura com notebooks, relatórios e canetas.",
         },
         icon: Workflow,
@@ -406,7 +406,7 @@ export const site = {
       "A OCOF estrutura o caminho entre posicionamento, atenção, vendas e escala para transformar crescimento digital em processo.",
     cta: "Fale com a OCOF",
     image: {
-      src: "/brand/ocof-table-meeting.webp",
+      src: "/brand/ocof-table-meeting-branded.webp",
       alt: "Mesa de reunião estratégica com notebooks, cadernos, canetas e relatórios.",
     },
   },
