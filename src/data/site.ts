@@ -48,20 +48,20 @@ export const site = {
       "A OCOF traduz organização, autoridade e alto padrão em cada ponto de contato da marca.",
     gallery: [
       {
-        src: "/brand/ocof-table-dashboard-branded.webp",
-        alt: "Mesa de operação digital com laptop, caderno, mouse, caneta e materiais estratégicos em tons neutros.",
+        src: "/brand/ocof-agenda-realistic-hero.webp",
+        alt: "Agenda corporativa preta com textura de couro, espiral, elástico e logo OCOF gravada na capa.",
       },
       {
-        src: "/brand/ocof-table-planning-branded.webp",
-        alt: "Mesa de planejamento com agenda aberta, caderno preto, laptop, canetas e relatórios em tons neutros.",
+        src: "/brand/ocof-agenda-realistic-planning.webp",
+        alt: "Mesa de planejamento com agenda OCOF, laptop, caneta, café e relatórios em tons neutros.",
       },
       {
-        src: "/brand/ocof-table-materials-branded.webp",
-        alt: "Composição de agendas, cadernos, caneta, tablet e materiais institucionais sobre mesa grafite.",
+        src: "/brand/ocof-agenda-realistic-materials.webp",
+        alt: "Agenda OCOF premium sobre mesa grafite com textura de couro, espiral e acabamento institucional.",
       },
       {
-        src: "/brand/ocof-table-meeting-branded.webp",
-        alt: "Reunião estratégica vista pela mesa, com notebooks, cadernos, canetas e relatórios.",
+        src: "/brand/ocof-agenda-realistic-meeting.webp",
+        alt: "Reunião estratégica com agenda OCOF, notebooks, canetas, café e relatórios sobre mesa escura.",
       },
     ],
   },
@@ -164,8 +164,8 @@ export const site = {
         details:
           "Planejamento estratégico, posicionamento, ofertas, copywriting, conteúdo, tráfego pago, páginas, automações e métricas.",
         image: {
-          src: "/brand/ocof-table-planning-branded.webp",
-          alt: "Mesa de planejamento com agenda, laptop, cadernos e canetas organizados.",
+          src: "/brand/ocof-agenda-realistic-planning.webp",
+          alt: "Mesa de planejamento com agenda OCOF, laptop, canetas e relatórios organizados.",
         },
         icon: Rocket,
       },
@@ -176,8 +176,8 @@ export const site = {
         details:
           "Presença, conversão, cadência comercial e análise contínua para transformar atenção em receita.",
         image: {
-          src: "/brand/ocof-table-dashboard-branded.webp",
-          alt: "Mesa de operação digital com laptop, caderno, mouse e materiais de análise.",
+          src: "/brand/ocof-agenda-realistic-hero.webp",
+          alt: "Agenda corporativa OCOF em textura de couro com logo gravada na capa.",
         },
         icon: TrendingUp,
       },
@@ -188,8 +188,8 @@ export const site = {
         details:
           "Clareza de mensagem, narrativa institucional, percepção premium e consistência de marca.",
         image: {
-          src: "/brand/ocof-table-materials-branded.webp",
-          alt: "Agendas, cadernos, tablet e caneta em composição institucional neutra.",
+          src: "/brand/ocof-agenda-realistic-materials.webp",
+          alt: "Agenda OCOF premium em composição institucional neutra sobre mesa grafite.",
         },
         icon: Gem,
       },
@@ -200,8 +200,8 @@ export const site = {
         details:
           "Fluxos, rituais, responsabilidades, indicadores e integração entre branding, vendas, tráfego e conteúdo.",
         image: {
-          src: "/brand/ocof-table-meeting-branded.webp",
-          alt: "Reunião estratégica sobre mesa escura com notebooks, relatórios e canetas.",
+          src: "/brand/ocof-agenda-realistic-meeting.webp",
+          alt: "Reunião estratégica com agenda OCOF, notebooks, relatórios e canetas.",
         },
         icon: Workflow,
       },
@@ -406,8 +406,8 @@ export const site = {
       "A OCOF estrutura o caminho entre posicionamento, atenção, vendas e escala para transformar crescimento digital em processo.",
     cta: "Fale com a OCOF",
     image: {
-      src: "/brand/ocof-table-meeting-branded.webp",
-      alt: "Mesa de reunião estratégica com notebooks, cadernos, canetas e relatórios.",
+      src: "/brand/ocof-agenda-realistic-meeting.webp",
+      alt: "Mesa de reunião estratégica com agenda OCOF, notebooks, canetas e relatórios.",
     },
   },
   footer: {

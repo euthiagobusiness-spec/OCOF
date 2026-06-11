@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { site } from "@/data/site";
 import { VisualFrame } from "@/components/ui/VisualFrame";
 
@@ -15,21 +14,7 @@ export function BrandShowcase() {
         quality={88}
         sizes="(min-width: 1024px) 46vw, 90vw"
         src={dashboard.src}
-      >
-        <div className="absolute bottom-4 left-4 right-4 flex items-end justify-between gap-4 sm:bottom-5 sm:left-5 sm:right-5 sm:gap-5">
-          <Image
-            alt="Logo OCOF em aplicacao institucional"
-            className="h-auto w-32 object-contain mix-blend-screen sm:w-40"
-            height={205}
-            loading="eager"
-            src={site.assets.logo}
-            width={590}
-          />
-          <p className="hidden max-w-52 text-right text-[0.62rem] font-semibold uppercase tracking-[0.28em] text-[var(--wine)] sm:block">
-            {site.signature}
-          </p>
-        </div>
-      </VisualFrame>
+      />
 
       <VisualFrame
         alt={planning.alt}
