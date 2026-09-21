@@ -6,7 +6,7 @@ const columns = [
 export function Footer() {
   return (
     <footer className="footer">
-      <div className="shell footer-layout">
+      <div className="shell footer-layout" data-reveal>
         <div className="footer-grid">
           <div className="footer-brand"><a href="/#inicio" aria-label="OCOF — voltar ao início"><span className="brand-mark" aria-hidden="true" /></a><p>Ousadia • Constância • Organização • Foco</p><p>Construímos operações de crescimento.</p></div>
           {columns.map(([title, links]) => (
