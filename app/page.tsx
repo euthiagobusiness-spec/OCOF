@@ -1,11 +1,11 @@
-import Image from "next/image";
 import { Header } from "@/components/navigation/Header";
 import { Footer } from "@/components/layout/Footer";
 import { Arrow } from "@/components/ui/Arrow";
 import { LiquidGlassButton } from "@/components/ui/LiquidGlassButton";
 import { ServicesAccordion } from "@/components/sections/ServicesAccordion";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
-import { Velaris } from "@/components/ui/Velaris";
+import { Constellation } from "@/components/ui/Constellation";
+import { HeroFloatGallery } from "@/components/ui/HeroFloatGallery";
 import { audiences, blockers, method, principles, solutions } from "@/components/content/site-content";
 
 export default function HomePage() {
@@ -17,14 +17,17 @@ export default function HomePage() {
       <div className="single-page-canvas">
       <main id="conteudo">
         <section className="hero hero-intro" id="inicio">
-          <Velaris className="hero-velaris" background="#020202" speed={0.48} grain={0.06}>
+          <div className="hero-constellation-shell">
+            <Constellation />
+            <HeroFloatGallery />
             <div className="shell hero-intro-inner">
               <div className="hero-intro-lockup" data-reveal-group>
                 <span className="hero-intro-wordmark brand-mark" data-reveal-repeat aria-label="OCOF" />
                 <p>Transformamos o valor que existe em crescimento exponencial</p>
               </div>
             </div>
-          </Velaris>
+            <p className="hero-guidance">Role para navegar · a experiência se revela no movimento</p>
+          </div>
         </section>
 
         <section className="section forces-section" id="ocof">
@@ -94,7 +97,6 @@ export default function HomePage() {
         <section className="section culture-section" id="cultura">
           <div className="shell culture-grid" data-reveal>
             <div className="culture-copy"><div className="section-kicker">Cultura OCOF</div><h2>Nossa cultura está no nosso <em>nome.</em></h2><div className="principles-list" data-reveal-group>{principles.map(([letter, title, text]) => <article key={title}><span>{letter}</span><div><h3>{title}</h3><p>{text}</p></div></article>)}</div></div>
-            <div className="culture-image"><Image src="/ocof/logo-wall.jpg" alt="Logo OCOF em ambiente institucional escuro" fill sizes="(max-width: 800px) 100vw, 42vw" /></div>
           </div>
         </section>
 

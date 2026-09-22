@@ -4,23 +4,24 @@ This page override preserves the approved OCOF brand direction when it differs f
 
 ## Visual thesis
 
-An executive, cinematic growth narrative: near-black environments, restrained warm-gold light, generous negative space and liquid-glass surfaces that feel substantial rather than futuristic.
+A black-velvet editorial stage inspired by the supplied DESIGN.md: pure black canvas, weight-400 sculptural typography, very generous negative space and a procedural constellation of violet, amber, teal and blue triangular particles. The OCOF content and brand mark remain the source of truth.
 
 ## Palette
 
-- Background: `#050505`
-- Elevated surface: `rgba(24, 22, 20, 0.72)`
-- Primary text: `#F4F1EC`
-- Secondary text: `#C9C3BA`
-- Accent: `#D8B78E`
-- Accent deep: `#9B7651`
-- Focus ring: `rgba(216, 183, 142, 0.92)`
+- Background: `#000000`
+- Primary text: `#FFFFFF`
+- Secondary text: `#BDBDBD`
+- Muted text: `#9A9A9A`
+- Primary action: `#8052FF`
+- Editorial accent: `#FFB829`
+- Secondary accent: `#15846E`
+- Focus ring: `#FFB829`
 
 ## Typography
 
-- Display and headings: Archivo variable, already bundled locally.
-- Body and controls: Manrope variable, already bundled locally.
-- Editorial accents: Plus Jakarta Sans variable, already bundled locally.
+- Display, headings and body: Manrope variable, already bundled locally, as the closest local substitute for PP Neue Montreal.
+- Headings use weight 400 and `-0.04em` tracking; hierarchy comes from scale, not boldness.
+- Body uses weight 300 for an airy editorial rhythm.
 - Avoid external font requests and preserve fast local rendering.
 
 ## Motion
@@ -34,9 +35,9 @@ An executive, cinematic growth narrative: near-black environments, restrained wa
 
 ## Surfaces
 
-- No visible divider lines around cards or between sections.
-- Create separation with depth, soft light, opacity and large multi-stop gradients.
-- Use liquid glass only for navigation, primary controls and selected cards.
+- No visible divider lines, framed cards, heavy shadows or gray section fills.
+- Create separation with typography, scale and whitespace on a pure black canvas.
+- Use violet only for singular primary actions and interaction emphasis.
 - Keep text contrast at or above 4.5:1 for reading content.
 
 ## Responsive
