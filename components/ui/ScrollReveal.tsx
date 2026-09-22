@@ -16,6 +16,12 @@ export function ScrollReveal() {
     });
 
     const elements = Array.from(document.querySelectorAll<HTMLElement>("[data-reveal], [data-reveal-group]"));
+    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (reducedMotion) {
+      elements.forEach((element) => element.classList.add("is-visible"));
+      return;
+    }
+
     if (!("IntersectionObserver" in window)) {
       elements.forEach((element) => element.classList.add("is-visible"));
       return;
