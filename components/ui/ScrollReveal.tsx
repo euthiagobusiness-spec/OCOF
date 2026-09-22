@@ -16,14 +16,17 @@ export function ScrollReveal() {
     });
 
     const elements = Array.from(document.querySelectorAll<HTMLElement>("[data-reveal], [data-reveal-group]"));
+    const repeaters = Array.from(document.querySelectorAll<HTMLElement>("[data-reveal-repeat]"));
     const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     if (reducedMotion) {
       elements.forEach((element) => element.classList.add("is-visible"));
+      repeaters.forEach((element) => element.classList.add("is-in-view"));
       return;
     }
 
     if (!("IntersectionObserver" in window)) {
       elements.forEach((element) => element.classList.add("is-visible"));
+      repeaters.forEach((element) => element.classList.add("is-in-view"));
       return;
     }
 
@@ -40,7 +43,20 @@ export function ScrollReveal() {
     );
 
     elements.forEach((element) => observer.observe(element));
-    return () => observer.disconnect();
+    const repeatObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          entry.target.classList.toggle("is-in-view", entry.isIntersecting);
+        });
+      },
+      { threshold: 0.28, rootMargin: "-8% 0px -8% 0px" },
+    );
+    repeaters.forEach((element) => repeatObserver.observe(element));
+
+    return () => {
+      observer.disconnect();
+      repeatObserver.disconnect();
+    };
   }, []);
 
   return null;
