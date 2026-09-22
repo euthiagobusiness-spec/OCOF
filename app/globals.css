@@ -39,7 +39,7 @@
 html { scroll-behavior: smooth; scroll-padding-top: 6rem; background: var(--background); }
 body { position: relative; isolation: isolate; min-width: 320px; margin: 0; overflow-x: clip; background: var(--background); color: var(--foreground); font-family: var(--font-manrope), Arial, sans-serif; font-size: 1rem; line-height: 1.6; }
 body::before { position: fixed; z-index: 0; inset: 0; content: ""; background: linear-gradient(180deg, rgba(4, 4, 4, 0.98) 0%, rgba(10, 10, 10, 0.97) 14%, rgba(18, 18, 18, 0.96) 29%, rgba(28, 28, 28, 0.94) 44%, rgba(18, 18, 18, 0.96) 59%, rgba(30, 30, 30, 0.94) 74%, rgba(16, 16, 16, 0.97) 88%, rgba(4, 4, 4, 0.99) 100%); pointer-events: none; }
-body::after { position: fixed; z-index: 0; inset: 0; content: ""; background: url("/ocof/ocof-office-background-realistic-v2.webp") center / cover no-repeat; filter: grayscale(1) contrast(1.08); opacity: 0.02; pointer-events: none; }
+body::after { position: fixed; z-index: 0; inset: 0; content: ""; background: url("/ocof/ocof-office-background-realistic-v2.webp") center / cover no-repeat; filter: grayscale(1) contrast(1.08); opacity: 0.005; pointer-events: none; }
 body > * { position: relative; z-index: 1; }
 body.menu-open { overflow: hidden; }
 h1, h2, h3, p { margin-block: 0; }
