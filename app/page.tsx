@@ -53,7 +53,7 @@ export default function HomePage() {
         <section className="section audience-section" id="publico">
           <div className="shell" data-reveal>
             <div className="section-kicker">Para quem construímos</div>
-            <div className="section-heading-grid"><h2>Você já sabe fazer algo valioso. <em>Agora isso precisa virar negócio.</em></h2><p className="section-copy">Chegamos com conhecimento, audiência, produto ou clientes. Organizamos tudo para vender, entregar e crescer.</p></div>
+            <div className="section-heading-grid audience-heading"><h2>Para quem já construiu <em>algo de valor.</em></h2></div>
             <div className="audience-grid" data-reveal-group>{audiences.map(([index, title, text]) => <article className="audience-card" key={title}><span className="card-index">{index}</span><h3>{title}</h3><p>{text}</p><span className="card-arrow" aria-hidden="true">↗</span></article>)}</div>
           </div>
         </section>

@@ -1,9 +1,9 @@
 export const audiences = [
-  ["01", "Especialistas e mentores", "Conhecimento validado que precisa se transformar em uma operação."],
-  ["02", "Criadores e influenciadores", "Audiência que pode virar produto, receita e empresa."],
-  ["03", "Consultores e profissionais liberais", "Competência que precisa ganhar estrutura, aquisição e escala."],
-  ["04", "Clínicas", "Boa capacidade técnica que precisa de demanda, conversão e previsibilidade."],
-  ["05", "Empresas digitais", "Negócios que já vendem e precisam superar o próximo gargalo."],
+  ["01", "Especialistas", "Transformamos conhecimento em negócio."],
+  ["02", "Criadores", "Transformamos audiência em negócio."],
+  ["03", "Profissionais", "Transformamos competência em crescimento."],
+  ["04", "Clínicas", "Transformamos capacidade em crescimento."],
+  ["05", "Empresas", "Transformamos negócios em novas fases de crescimento."],
 ] as const;
 
 export const blockers = [

@@ -167,6 +167,7 @@ html.reveal-ready .hero-intro [data-reveal].is-visible { transform: none; filter
 .audience-section { background: linear-gradient(180deg, rgba(14, 14, 14, 0.88) 0%, rgba(56, 47, 40, 0.74) 38%, rgba(43, 36, 31, 0.8) 70%, rgba(14, 14, 14, 0.9) 100%); }
 .audience-section .section-kicker { color: var(--ocof-accent); }
 .audience-section .section-heading-grid h2 em { color: var(--ocof-accent-strong); opacity: 0.92; }
+.audience-heading { grid-template-columns: minmax(0, 1fr); }
 .audience-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: clamp(0.75rem, 1.2vw, 1rem); margin-top: clamp(2.5rem, 4.5vw, 4.5rem); background: transparent; }
 .audience-card { min-height: 20rem; background: rgba(14, 14, 14, 0.92); border: 0; box-shadow: 0 1.25rem 2.8rem rgba(0, 0, 0, 0.36); transition: background var(--duration) var(--ease), transform var(--duration) var(--ease), box-shadow var(--duration) var(--ease); }
 .audience-card p { color: var(--ocof-light); opacity: 0.84; }
