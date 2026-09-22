@@ -12,6 +12,7 @@ export default function HomePage() {
       <a className="skip-link" href="#conteudo">Pular para o conteúdo</a>
       <Header />
       <ScrollReveal />
+      <div className="single-page-canvas">
       <main id="conteudo">
         <section className="hero hero-intro" id="inicio">
           <div className="shell hero-intro-inner" data-reveal>
@@ -103,6 +104,7 @@ export default function HomePage() {
         </section>
       </main>
       <Footer />
+      </div>
     </>
   );
 }

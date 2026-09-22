@@ -49,6 +49,10 @@ button, a { font: inherit; }
 button { cursor: pointer; }
 ::selection { background: var(--ocof-light); color: var(--ocof-deep); }
 
+/* One continuous story canvas: every chapter shares the same atmosphere. */
+.single-page-canvas { position: relative; isolation: isolate; overflow: clip; background: linear-gradient(180deg, rgba(0, 0, 0, 0.985) 0%, rgba(2, 2, 2, 0.98) 12%, rgba(10, 10, 10, 0.96) 27%, rgba(17, 17, 17, 0.95) 43%, rgba(8, 8, 8, 0.97) 60%, rgba(15, 15, 15, 0.95) 76%, rgba(3, 3, 3, 0.985) 100%); }
+.single-page-canvas::before { position: absolute; z-index: -1; inset: 0; content: ""; background: radial-gradient(ellipse at 50% 4%, rgba(216, 183, 142, 0.08), transparent 26rem), radial-gradient(ellipse at 14% 45%, rgba(237, 237, 237, 0.025), transparent 30rem), radial-gradient(ellipse at 88% 76%, rgba(237, 237, 237, 0.02), transparent 32rem); pointer-events: none; }
+
 .shell { width: min(calc(100% - 4rem), var(--shell)); margin-inline: auto; }
 .skip-link { position: fixed; z-index: 100; top: var(--space-4); left: var(--space-4); transform: translateY(-200%); padding: 0.75rem 1rem; border-radius: var(--radius-sm); background: var(--ocof-light); color: var(--ocof-deep); }
 .skip-link:focus { transform: translateY(0); }
