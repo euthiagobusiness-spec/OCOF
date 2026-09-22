@@ -38,7 +38,7 @@ export function ServicesAccordion({ items }: ServicesAccordionProps) {
               <div className="service-panel-inner">
                 <span className="service-deliverable">O que você recebe</span>
                 <h3>{subtitle}</h3>
-                <p>{text}</p>
+                {text ? <p>{text}</p> : null}
                 <a className="text-link" href="#contato" tabIndex={isActive ? 0 : -1}>
                   Conversar sobre isso <Arrow direction="up-right" />
                 </a>

@@ -70,7 +70,7 @@ export default function HomePage() {
         <section className="section services-section" id="servicos">
           <div className="shell" data-reveal>
             <div className="section-kicker">Produtos OCOF</div>
-            <div className="section-heading-grid"><h2>Do diagnóstico à execução. <em>A ajuda acompanha o problema.</em></h2><p className="section-copy">Você pode aprender, implementar, decidir conosco, delegar uma área ou construir em parceria.</p></div>
+            <div className="section-heading-grid"><h2>Atuamos conforme a <em>realidade.</em></h2></div>
             <ServicesAccordion items={solutions} />
           </div>
         </section>

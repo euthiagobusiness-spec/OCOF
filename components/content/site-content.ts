@@ -16,10 +16,10 @@ export const blockers = [
 ] as const;
 
 export const solutions = [
-  ["OCOF SCAN", "Encontrar o ponto que trava.", "Mapeamos mercado, oferta, vendas e operação. Você sai sabendo o que resolver primeiro.", "Diagnóstico"],
-  ["OCOF ADVISORY", "Escolher o próximo passo.", "Ajudamos o founder a decidir, priorizar e acompanhar a execução sem improviso.", "Direção"],
-  ["OCOF SPRINT", "Consertar um gargalo.", "Um projeto curto para destravar aquisição, vendas, oferta, operação ou tecnologia.", "Execução"],
-  ["OCOF EQUITY", "Construir resultado junto.", "Entramos na operação quando podemos influenciar o resultado e dividir o crescimento.", "Parceria"],
+  ["OCOF SCAN", "Diagnóstico para identificar o gargalo e definir o que aplicar.", "", "Diagnóstico"],
+  ["OCOF ADVISORY", "Acompanhamento estratégico para orientar decisões e direcionar o crescimento.", "", "Direção"],
+  ["OCOF SPRINT", "Serviço especializado para executar a solução de um gargalo específico.", "", "Execução"],
+  ["OCOF EQUITY", "Parceria estratégica para construir e expandir a operação juntos.", "", "Parceria"],
 ] as const;
 
 export const method = [
