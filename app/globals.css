@@ -137,8 +137,8 @@ html.reveal-ready .hero-intro [data-reveal].is-visible { transform: none; filter
 .forces-heading .section-kicker { justify-content: center; }
 .forces-heading h2 { max-width: 22ch; margin-top: var(--space-8); color: var(--ocof-light); font-size: clamp(2.7rem, 5.6vw, 5.4rem); text-align: center; }
 .forces-heading h2 em { display: block; color: var(--ocof-accent-strong); font-style: normal; }
-.forces-content { display: grid; grid-template-columns: minmax(0, 0.9fr) minmax(28rem, 1.1fr); gap: clamp(2rem, 6vw, 7rem); align-items: center; }
-.forces-list { display: grid; gap: 1rem; margin-top: clamp(2.5rem, 5vw, 4rem); }
+.forces-content { display: grid; grid-template-columns: minmax(0, 1fr); gap: clamp(2rem, 6vw, 7rem); align-items: center; }
+.forces-list { display: grid; gap: 1rem; width: min(100%, 58rem); margin: 0 auto; }
 .force-card { position: relative; isolation: isolate; overflow: hidden; display: grid; grid-template-columns: 3rem 1fr; gap: 0.35rem 1rem; padding: 1.4rem 1.5rem; border-radius: var(--radius-md); background: linear-gradient(135deg, rgba(58, 58, 58, 0.42), rgba(14, 14, 14, 0.72)); box-shadow: 0 1.5rem 3.2rem rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.07), inset 0 -1.5rem 2.5rem rgba(0, 0, 0, 0.12); backdrop-filter: blur(24px) saturate(1.14); transition: transform var(--duration) var(--ease), background var(--duration) var(--ease), box-shadow var(--duration) var(--ease); }
 .force-card::before { position: absolute; z-index: -1; inset: 0; content: ""; background: radial-gradient(circle at 10% 10%, rgba(216, 183, 142, 0.12), transparent 48%); pointer-events: none; }
 .force-card:hover { transform: translateY(-0.35rem); background: linear-gradient(135deg, rgba(78, 78, 78, 0.48), rgba(16, 16, 16, 0.76)); box-shadow: 0 1.8rem 3.8rem rgba(0, 0, 0, 0.38), inset 0 1px 0 rgba(255, 255, 255, 0.1); }

@@ -34,13 +34,6 @@ export default function HomePage() {
                 <article className="force-card"><span className="card-index">01</span><h3>Mercado</h3><p>Fazemos o mercado escolher você.</p><small>Posicionamento, produto, oferta, aquisição e vendas.</small></article>
                 <article className="force-card"><span className="card-index">02</span><h3>Empresa</h3><p>Construímos a estrutura que sustenta o crescimento.</p><small>Processos, pessoas, gestão, dados, tecnologia e execução.</small></article>
               </div>
-              <div className="forces-visual" data-reveal-group aria-label="Imagens da identidade OCOF">
-                <div className="hero-image hero-image-main"><Image src="/ocof/hero-collage.jpg" alt="Composição de identidade OCOF em tons escuros" fill priority sizes="(max-width: 800px) 100vw, 48vw" /></div>
-                <div className="hero-image hero-image-small hero-image-small-one"><Image src="/ocof/logo-dark.jpg" alt="Logo OCOF em fundo escuro" fill sizes="(max-width: 800px) 45vw, 18vw" /></div>
-                <div className="hero-image hero-image-small hero-image-small-two"><Image src="/ocof/logo-stone.jpg" alt="Logo OCOF em textura de pedra" fill sizes="(max-width: 800px) 45vw, 18vw" /></div>
-                <div className="stat-card stat-card-top"><strong>04</strong><span>frentes integradas</span></div>
-                <div className="stat-card stat-card-bottom"><strong>100%</strong><span>foco em previsibilidade</span></div>
-              </div>
             </div>
           </div>
         </section>
