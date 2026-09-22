@@ -38,7 +38,7 @@
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; scroll-padding-top: 6rem; background: var(--background); }
 body { position: relative; isolation: isolate; min-width: 320px; margin: 0; overflow-x: clip; background: var(--background); color: var(--foreground); font-family: var(--font-manrope), Arial, sans-serif; font-size: 1rem; line-height: 1.6; }
-body::before { position: fixed; z-index: 0; inset: 0; content: ""; background: linear-gradient(rgba(14, 14, 14, 0.46), rgba(14, 14, 14, 0.46)), url("/ocof/ocof-office-background-realistic-v2.png") center / cover no-repeat; filter: saturate(0.82) contrast(0.98); opacity: 0.75; pointer-events: none; }
+body::before { position: fixed; z-index: 0; inset: 0; content: ""; background: linear-gradient(180deg, rgba(8, 8, 8, 0.58) 0%, rgba(14, 14, 14, 0.52) 9%, rgba(23, 20, 18, 0.46) 18%, rgba(37, 30, 25, 0.38) 27%, rgba(48, 38, 29, 0.32) 36%, rgba(27, 24, 22, 0.42) 45%, rgba(14, 14, 14, 0.5) 54%, rgba(31, 27, 24, 0.42) 63%, rgba(49, 39, 31, 0.34) 72%, rgba(39, 32, 27, 0.39) 81%, rgba(16, 15, 14, 0.52) 91%, rgba(7, 7, 7, 0.66) 100%), url("/ocof/ocof-office-background-realistic-v2.png") center / cover no-repeat; filter: saturate(0.82) contrast(0.98); opacity: 0.75; pointer-events: none; }
 body > * { position: relative; z-index: 1; }
 body.menu-open { overflow: hidden; }
 h1, h2, h3, p { margin-block: 0; }
@@ -254,7 +254,10 @@ button { cursor: pointer; }
 .footer-bottom { display: flex; align-items: flex-end; flex-direction: column; justify-content: flex-start; gap: 0.55rem; padding: 0; color: var(--ocof-muted); font-size: 0.58rem; line-height: 1.45; letter-spacing: 0.08em; text-transform: uppercase; }
 .footer-bottom p { margin: 0; }
 
-.legal-hero { padding-block: 11rem 4rem; background: rgba(14, 14, 14, 0.84); color: var(--ocof-light); }
+/* A single continuous canvas prevents horizontal seams between page sections. */
+.hero, .section, .dark-section, .intro-section, .diagnostic-section, .audience-section, .blockers-section, .services-section, .method-section, .differential-section, .culture-section, .closing-section, .footer, .legal-hero { background: transparent; }
+
+.legal-hero { padding-block: 11rem 4rem; background: transparent; color: var(--ocof-light); }
 .legal-hero h1 { max-width: 13ch; margin-top: 1.5rem; font-size: clamp(3rem, 7vw, 6rem); }
 .legal-hero p:last-child { max-width: 40rem; margin-top: 1.5rem; color: var(--ocof-soft); }
 .legal-content { max-width: 50rem; padding-block: 5rem 8rem; }
