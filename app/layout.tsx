@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import localFont from "next/font/local";
+import { MotionProvider } from "@/components/ui/MotionProvider";
 import "./globals.css";
 
 const manrope = localFont({
@@ -55,7 +56,7 @@ export const viewport: Viewport = {
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="pt-BR" className={`${manrope.variable} ${archivo.variable} ${jakarta.variable}`}>
-      <body>{children}</body>
+      <body><MotionProvider>{children}</MotionProvider></body>
     </html>
   );
 }

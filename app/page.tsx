@@ -2,8 +2,10 @@ import Image from "next/image";
 import { Header } from "@/components/navigation/Header";
 import { Footer } from "@/components/layout/Footer";
 import { Arrow } from "@/components/ui/Arrow";
+import { LiquidGlassButton } from "@/components/ui/LiquidGlassButton";
 import { ServicesAccordion } from "@/components/sections/ServicesAccordion";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
+import { Velaris } from "@/components/ui/Velaris";
 import { audiences, blockers, method, principles, solutions } from "@/components/content/site-content";
 
 export default function HomePage() {
@@ -15,12 +17,14 @@ export default function HomePage() {
       <div className="single-page-canvas">
       <main id="conteudo">
         <section className="hero hero-intro" id="inicio">
-          <div className="shell hero-intro-inner" data-reveal>
-            <div className="hero-intro-lockup" data-reveal-group>
-              <span className="hero-intro-wordmark brand-mark" data-reveal-repeat aria-label="OCOF" />
-              <p>Transformamos o valor que existe em crescimento exponencial</p>
+          <Velaris className="hero-velaris" background="#020202" speed={0.48} grain={0.06}>
+            <div className="shell hero-intro-inner">
+              <div className="hero-intro-lockup" data-reveal-group>
+                <span className="hero-intro-wordmark brand-mark" data-reveal-repeat aria-label="OCOF" />
+                <p>Transformamos o valor que existe em crescimento exponencial</p>
+              </div>
             </div>
-          </div>
+          </Velaris>
         </section>
 
         <section className="section forces-section" id="ocof">
@@ -95,7 +99,7 @@ export default function HomePage() {
         </section>
 
         <section className="section closing-section" id="contato">
-          <div className="shell closing-inner" data-reveal><div className="section-kicker">Próximo estágio</div><h2>Seu negócio já provou que tem valor. <em>A pergunta é: até quando você vai aceitar crescer abaixo do potencial que construiu?</em></h2><p>Descubra o que está limitando seu crescimento e construa com a OCOF o que falta para ir além.</p><a className="button button-light" href="mailto:contato@ocof.com.br">Construir com a OCOF <Arrow direction="right" /></a></div>
+          <div className="shell closing-inner" data-reveal><div className="section-kicker">Próximo estágio</div><h2>Seu negócio já provou que tem valor. <em>A pergunta é: até quando você vai aceitar crescer abaixo do potencial que construiu?</em></h2><p>Descubra o que está limitando seu crescimento e construa com a OCOF o que falta para ir além.</p><LiquidGlassButton className="closing-cta" href="mailto:contato@ocof.com.br">Construir com a OCOF <Arrow direction="right" /></LiquidGlassButton></div>
         </section>
       </main>
       <Footer />

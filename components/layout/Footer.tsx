@@ -1,3 +1,5 @@
+import { LiquidGlassButton } from "@/components/ui/LiquidGlassButton";
+
 const columns = [
   ["OCOF", [["Início", "#inicio"], ["OCOF", "#ocof"], ["Serviços", "#servicos"]]],
   ["Operação", [["Método", "#metodo"], ["Cultura", "#cultura"], ["Contato", "#contato"]]],
@@ -12,7 +14,7 @@ export function Footer() {
           {columns.map(([title, links]) => (
             <nav key={title} aria-label={title}><h2>{title}</h2>{links.map(([label, href]) => <a key={label} href={`/${href}`}>{label}</a>)}</nav>
           ))}
-          <div className="footer-contact"><h2>Contato</h2><p>Conversas comerciais qualificadas para negócios que querem crescer com estrutura.</p><a className="button button-light" href="/#contato">Fale com a OCOF <span aria-hidden="true">◌</span></a></div>
+          <div className="footer-contact"><h2>Contato</h2><p>Conversas comerciais qualificadas para negócios que querem crescer com estrutura.</p><LiquidGlassButton href="/#contato">Fale com a OCOF <span aria-hidden="true">◌</span></LiquidGlassButton></div>
         </div>
         <div className="footer-meta">
           <div className="footer-legal">

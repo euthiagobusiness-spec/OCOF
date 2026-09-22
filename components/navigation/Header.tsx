@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { Arrow } from "@/components/ui/Arrow";
+import { LiquidGlassButton } from "@/components/ui/LiquidGlassButton";
 
 const navItems = [
   ["Início", "/#inicio"],
@@ -55,9 +56,9 @@ export function Header() {
         <nav className="desktop-nav" aria-label="Navegação principal">
           {navItems.map(([label, href]) => <a key={href} href={href}>{label}</a>)}
         </nav>
-        <a className="button button-small header-cta" href="/#contato">
+        <LiquidGlassButton className="header-cta" href="/#contato">
           Fale com a OCOF <Arrow direction="right" />
-        </a>
+        </LiquidGlassButton>
         <button
           className="menu-toggle"
           type="button"
@@ -76,9 +77,9 @@ export function Header() {
               <span>0{index + 1}</span>{label}<Arrow direction="up-right" />
             </a>
           ))}
-          <a className="button" href="/#scan" onClick={() => setOpen(false)}>
+          <LiquidGlassButton href="/#contato" onClick={() => setOpen(false)}>
             Fale com a OCOF <Arrow direction="right" />
-          </a>
+          </LiquidGlassButton>
         </nav>
       </div>
     </header>
