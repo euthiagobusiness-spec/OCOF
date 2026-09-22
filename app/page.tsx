@@ -13,41 +13,31 @@ export default function HomePage() {
       <Header />
       <ScrollReveal />
       <main id="conteudo">
-        <section className="hero" id="inicio">
-          <div className="shell hero-grid" data-reveal>
-            <div className="hero-copy" data-reveal>
-              <div className="eyebrow">Diagnóstico antes da solução</div>
-              <p className="hero-motto">Mercado • Operação • Resultado</p>
-              <h1><span className="hero-title-line">Seu negócio tem valor.</span><span className="hero-title-line hero-title-accent">Nós fazemos ele funcionar.</span></h1>
-              <p className="hero-lead">Encontramos o que trava — clientes, vendas ou operação — e construímos o próximo passo.</p>
-              <div className="hero-actions">
-                <a className="button button-light" href="#contato">Descobrir o que trava <Arrow direction="right" /></a>
-                <a className="text-link" href="#metodo">Entender como funciona <Arrow direction="up-right" /></a>
-              </div>
+        <section className="hero hero-intro" id="inicio">
+          <div className="shell hero-intro-inner" data-reveal>
+            <div className="hero-intro-lockup">
+              <span className="hero-intro-wordmark brand-mark" aria-label="OCOF" />
+              <p>Transformamos o valor que existe em crescimento exponencial</p>
             </div>
-            <div className="hero-visual" data-reveal="visual" data-reveal-group aria-label="Imagens da identidade OCOF">
-              <div className="hero-image hero-image-main"><Image src="/ocof/hero-collage.jpg" alt="Composição de identidade OCOF em tons escuros" fill priority sizes="(max-width: 800px) 100vw, 52vw" /></div>
-              <div className="hero-image hero-image-small hero-image-small-one"><Image src="/ocof/logo-dark.jpg" alt="Logo OCOF em fundo escuro" fill sizes="(max-width: 800px) 45vw, 20vw" /></div>
-              <div className="hero-image hero-image-small hero-image-small-two"><Image src="/ocof/logo-stone.jpg" alt="Logo OCOF em textura de pedra" fill sizes="(max-width: 800px) 45vw, 20vw" /></div>
-              <div className="stat-card stat-card-top"><strong>04</strong><span>frentes integradas</span></div>
-              <div className="stat-card stat-card-bottom"><strong>100%</strong><span>foco em previsibilidade</span></div>
-            </div>
-          </div>
-          <div className="shell hero-signals" data-reveal data-reveal-group aria-label="Resumo da operação">
-            <span>Encontramos o gargalo</span><span>Organizamos o que trava</span><span>Construímos o próximo passo</span>
           </div>
         </section>
 
-        <section className="section intro-section" id="ocof">
-          <div className="shell" data-reveal>
-            <div className="section-kicker">O que a OCOF muda</div>
-            <div className="section-heading-grid">
-              <h2>Do potencial que você já tem <em>ao negócio que funciona.</em></h2>
-              <div className="section-copy"><p>Você pode ter conhecimento, produto, audiência e equipe. Se as peças não se conectam, o negócio trava.</p><p>A OCOF encontra o ponto do problema e organiza mercado, vendas e operação para o próximo resultado.</p></div>
+        <section className="section forces-section" id="ocof">
+          <div className="shell forces-grid" data-reveal>
+            <div className="forces-copy">
+              <div className="section-kicker">Duas forças</div>
+              <h2>Crescimento exige duas forças: <em>um mercado que escolhe e uma empresa que sustenta.</em></h2>
+              <div className="forces-list" data-reveal-group>
+                <article className="force-card"><span className="card-index">01</span><h3>Mercado</h3><p>Fazemos o mercado escolher você.</p><small>Posicionamento, produto, oferta, aquisição e vendas.</small></article>
+                <article className="force-card"><span className="card-index">02</span><h3>Empresa</h3><p>Construímos a estrutura que sustenta o crescimento.</p><small>Processos, pessoas, gestão, dados, tecnologia e execução.</small></article>
+              </div>
             </div>
-            <div className="logic-grid" data-reveal-group>
-              <article className="logic-card"><span className="card-index">01 / MERCADO</span><h3>Fazer o mercado escolher.</h3><p>Posicionamento, oferta, aquisição e vendas para transformar atenção em clientes.</p><a href="#gargalos" aria-label="Ver gargalos de mercado"><Arrow direction="up-right" /></a></article>
-              <article className="logic-card"><span className="card-index">02 / OPERAÇÃO</span><h3>Fazer a operação entregar.</h3><p>Processos, pessoas, dados e tecnologia para crescer sem depender do improviso.</p><a href="#metodo" aria-label="Ver método da OCOF"><Arrow direction="up-right" /></a></article>
+            <div className="forces-visual" data-reveal-group aria-label="Imagens da identidade OCOF">
+              <div className="hero-image hero-image-main"><Image src="/ocof/hero-collage.jpg" alt="Composição de identidade OCOF em tons escuros" fill priority sizes="(max-width: 800px) 100vw, 48vw" /></div>
+              <div className="hero-image hero-image-small hero-image-small-one"><Image src="/ocof/logo-dark.jpg" alt="Logo OCOF em fundo escuro" fill sizes="(max-width: 800px) 45vw, 18vw" /></div>
+              <div className="hero-image hero-image-small hero-image-small-two"><Image src="/ocof/logo-stone.jpg" alt="Logo OCOF em textura de pedra" fill sizes="(max-width: 800px) 45vw, 18vw" /></div>
+              <div className="stat-card stat-card-top"><strong>04</strong><span>frentes integradas</span></div>
+              <div className="stat-card stat-card-bottom"><strong>100%</strong><span>foco em previsibilidade</span></div>
             </div>
           </div>
         </section>
