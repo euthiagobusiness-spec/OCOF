@@ -517,11 +517,10 @@ h1, h2, h3 { font-family: var(--font-manrope), Arial, sans-serif; font-weight: 4
 .liquid-glass-button::after { display: none; }
 .liquid-glass-button:hover .liquid-glass-button__surface { background: #7040f2; filter: none; }
 
-.hero-intro, .hero-constellation-shell, .hero-intro-inner { min-height: 100svh; }
+.hero-intro, .hero-stage, .hero-intro-inner { min-height: 100svh; }
 .hero-intro { padding: 0; background: #000 !important; }
-.hero-constellation-shell { position: relative; isolation: isolate; width: 100%; overflow: hidden; background: #000; }
-.hero-constellation-shell::after { position: absolute; z-index: 0; inset: 0; content: ""; background: radial-gradient(circle at center, transparent 0 14%, rgba(0, 0, 0, 0.18) 46%, #000 88%); pointer-events: none; }
-.constellation { position: absolute; z-index: 0; inset: 0; width: 100%; height: 100%; opacity: 0.92; pointer-events: none; }
+.hero-stage { position: relative; isolation: isolate; width: 100%; overflow: hidden; background: #000; }
+.hero-stage::after { position: absolute; z-index: 0; inset: 0; content: ""; background: radial-gradient(circle at center, transparent 0 14%, rgba(0, 0, 0, 0.18) 46%, #000 88%); pointer-events: none; }
 .hero-float-gallery { position: absolute; z-index: 1; inset: 0; overflow: hidden; pointer-events: none; }
 .hero-float { position: absolute; overflow: hidden; background: #080808; filter: grayscale(1) contrast(1.08); opacity: 0.72; will-change: transform; }
 .hero-float img { object-fit: cover; }
@@ -642,13 +641,11 @@ h1, h2, h3 { font-family: var(--font-manrope), Arial, sans-serif; font-weight: 4
 @media (max-width: 560px) {
   .shell, .header-inner { width: min(calc(100% - 2rem), var(--shell)); }
   .hero-intro-lockup { padding-top: 5.5rem; }
-  .constellation { opacity: 0.78; }
   .force-card { grid-template-columns: 2.25rem 1fr; }
   .section-heading-grid h2, .culture-copy h2, .closing-inner h2, .forces-heading h2 { font-size: clamp(2.75rem, 14vw, 4.6rem); }
   .audience-card h3, .blocker-card h3, .method-card h3 { font-size: clamp(2rem, 10vw, 3rem); }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .constellation { opacity: 0.72; }
   .hero-float { animation: none; }
 }

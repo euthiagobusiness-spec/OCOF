@@ -4,7 +4,7 @@ This page override preserves the approved OCOF brand direction when it differs f
 
 ## Visual thesis
 
-A black-velvet editorial stage inspired by the supplied DESIGN.md: pure black canvas, weight-400 sculptural typography, very generous negative space and a procedural constellation of violet, amber, teal and blue triangular particles. The OCOF content and brand mark remain the source of truth.
+A black-velvet editorial stage inspired by the supplied DESIGN.md and video reference: pure black canvas, weight-400 sculptural typography, very generous negative space and a small set of OCOF images floating around the central mark. The OCOF content and brand mark remain the source of truth.
 
 ## Palette
 
@@ -14,7 +14,6 @@ A black-velvet editorial stage inspired by the supplied DESIGN.md: pure black ca
 - Muted text: `#9A9A9A`
 - Primary action: `#8052FF`
 - Editorial accent: `#FFB829`
-- Secondary accent: `#15846E`
 - Focus ring: `#FFB829`
 
 ## Typography

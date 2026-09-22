@@ -4,7 +4,6 @@ import { Arrow } from "@/components/ui/Arrow";
 import { LiquidGlassButton } from "@/components/ui/LiquidGlassButton";
 import { ServicesAccordion } from "@/components/sections/ServicesAccordion";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
-import { Constellation } from "@/components/ui/Constellation";
 import { HeroFloatGallery } from "@/components/ui/HeroFloatGallery";
 import { audiences, blockers, method, principles, solutions } from "@/components/content/site-content";
 
@@ -17,8 +16,7 @@ export default function HomePage() {
       <div className="single-page-canvas">
       <main id="conteudo">
         <section className="hero hero-intro" id="inicio">
-          <div className="hero-constellation-shell">
-            <Constellation />
+          <div className="hero-stage">
             <HeroFloatGallery />
             <div className="shell hero-intro-inner">
               <div className="hero-intro-lockup" data-reveal-group>
