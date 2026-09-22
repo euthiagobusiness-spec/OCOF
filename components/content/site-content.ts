@@ -7,12 +7,12 @@ export const audiences = [
 ] as const;
 
 export const blockers = [
-  ["Aquisição", "A demanda chega de forma irregular.", "Previsibilidade e canais", "01"],
-  ["Vendas", "Os leads existem, mas não avançam.", "Conversão e processo comercial", "02"],
-  ["Produto e oferta", "O valor existe, mas ainda não está claro.", "Oferta e posicionamento", "03"],
-  ["Operação", "O negócio cresce e o caos cresce junto.", "Processos e responsabilidades", "04"],
-  ["Tecnologia e IA", "O trabalho manual consome a equipe.", "Integração e eficiência", "05"],
-  ["Escala", "A operação funciona, mas encontrou um limite.", "Próximo estágio", "06"],
+  ["Aquisição não é previsível", "Criamos formas consistentes de atrair novas oportunidades.", "01"],
+  ["Vendas não avançam", "Transformamos oportunidades em um processo claro de vendas.", "02"],
+  ["Produto não convence", "Construímos produtos e ofertas que o mercado entende e deseja.", "03"],
+  ["Operação não acompanha", "Organizamos a estrutura para entregar e crescer com controle.", "04"],
+  ["Tecnologia não gera eficiência", "Usamos tecnologia e IA para simplificar, automatizar e acelerar.", "05"],
+  ["Escala encontra limites", "Resolvemos os gargalos que impedem o negócio de continuar crescendo.", "06"],
 ] as const;
 
 export const solutions = [

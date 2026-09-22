@@ -179,6 +179,7 @@ html.reveal-ready .hero-intro [data-reveal].is-visible { transform: none; filter
 .audience-card:hover .card-arrow, .blocker-card:hover .card-arrow { color: var(--ocof-light); transform: translate3d(0.18rem, -0.18rem, 0); }
 
 .blockers-section { background: linear-gradient(180deg, rgba(14, 14, 14, 0.9) 0%, rgba(43, 36, 31, 0.8) 24%, rgba(25, 22, 20, 0.86) 58%, rgba(14, 14, 14, 0.94) 100%); }
+.blockers-heading { grid-template-columns: minmax(0, 1fr); }
 .blockers-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(0.75rem, 1.6vw, 1.25rem); margin-top: clamp(2.5rem, 4.5vw, 4.5rem); background: transparent; }
 .blocker-card { min-height: 17rem; transition: background var(--duration) var(--ease), transform var(--duration) var(--ease); }
 .blocker-card:hover { background: var(--ocof-brown); }

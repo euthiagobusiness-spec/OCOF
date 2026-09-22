@@ -61,8 +61,8 @@ export default function HomePage() {
         <section className="section dark-section blockers-section" id="gargalos">
           <div className="shell" data-reveal>
             <div className="section-kicker">O que resolvemos</div>
-            <div className="section-heading-grid"><h2>Encontramos o ponto que trava. <em>E resolvemos primeiro.</em></h2><p className="section-copy">Às vezes faltam clientes. Às vezes há clientes, mas o negócio perde vendas, tempo ou controle. Começamos pelo problema que mais custa ao negócio.</p></div>
-            <div className="blockers-grid" data-reveal-group>{blockers.map(([title, text, focus, index]) => <article className="blocker-card" key={title}><span className="card-index">{index}</span><h3>{title}</h3><p>{text}</p><div className="blocker-focus"><small>FOCO OCOF</small><strong>{focus}</strong></div><span className="card-arrow" aria-hidden="true">↗</span></article>)}</div>
+            <div className="section-heading-grid blockers-heading"><h2>Resolvemos os gargalos que <em>limitam o crescimento.</em></h2></div>
+            <div className="blockers-grid" data-reveal-group>{blockers.map(([title, text, index]) => <article className="blocker-card" key={title}><span className="card-index">{index}</span><h3>{title}</h3><p>{text}</p><span className="card-arrow" aria-hidden="true">↗</span></article>)}</div>
           </div>
         </section>
 
