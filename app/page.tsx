@@ -94,13 +94,13 @@ export default function HomePage() {
 
         <section className="section culture-section" id="cultura">
           <div className="shell culture-grid" data-reveal>
-            <div className="culture-copy"><div className="section-kicker">Cultura OCOF</div><h2>Talento importa. <em>Execução sustenta.</em></h2><p>Na OCOF, valorizamos clareza, responsabilidade e postura profissional em cada etapa da operação.</p><div className="principles-list" data-reveal-group>{principles.map(([letter, title, text]) => <article key={title}><span>{letter}</span><div><h3>{title}</h3><p>{text}</p></div></article>)}</div></div>
+            <div className="culture-copy"><div className="section-kicker">Cultura OCOF</div><h2>Nossa cultura está no nosso <em>nome.</em></h2><div className="principles-list" data-reveal-group>{principles.map(([letter, title, text]) => <article key={title}><span>{letter}</span><div><h3>{title}</h3><p>{text}</p></div></article>)}</div></div>
             <div className="culture-image"><Image src="/ocof/logo-wall.jpg" alt="Logo OCOF em ambiente institucional escuro" fill sizes="(max-width: 800px) 100vw, 42vw" /></div>
           </div>
         </section>
 
         <section className="section closing-section" id="contato">
-          <div className="shell closing-inner" data-reveal><div className="section-kicker">Próximo estágio</div><h2>Seu negócio não precisa de mais uma ação.<br /><em>Precisa funcionar melhor.</em></h2><p>Encontramos o que trava, organizamos o que falta e construímos o próximo resultado.</p><a className="button button-light" href="mailto:contato@ocof.com.br">Descobrir o que trava <Arrow direction="right" /></a></div>
+          <div className="shell closing-inner" data-reveal><div className="section-kicker">Próximo estágio</div><h2>Seu negócio já provou que tem valor. <em>A pergunta é: até quando você vai aceitar crescer abaixo do potencial que construiu?</em></h2><p>Descubra o que está limitando seu crescimento e construa com a OCOF o que falta para ir além.</p><a className="button button-light" href="mailto:contato@ocof.com.br">Construir com a OCOF <Arrow direction="right" /></a></div>
         </section>
       </main>
       <Footer />

@@ -277,7 +277,7 @@ html.reveal-ready .forces-visual.is-visible .stat-card-bottom { animation-play-s
 .closing-section { background: linear-gradient(180deg, rgba(36, 32, 29, 0.84) 0%, rgba(22, 20, 19, 0.88) 52%, rgba(14, 14, 14, 0.94) 100%); }
 .closing-inner { padding-block: clamp(1rem, 4vw, 3rem); text-align: center; }
 .closing-inner .section-kicker { justify-content: center; }
-.closing-inner h2 { max-width: 18ch; margin: 2rem auto 0; color: var(--ocof-light); font-size: clamp(2.8rem, 6vw, 6rem); }
+.closing-inner h2 { max-width: 28ch; margin: 2rem auto 0; color: var(--ocof-light); font-size: clamp(2.6rem, 5.2vw, 5.4rem); }
 .closing-inner > p { margin-top: var(--space-8); color: var(--ocof-muted); font-family: var(--font-archivo), Arial, sans-serif; font-size: 1.35rem; }
 .closing-inner .button { margin-top: var(--space-8); }
 

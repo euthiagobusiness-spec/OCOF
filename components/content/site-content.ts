@@ -30,8 +30,8 @@ export const method = [
 ] as const;
 
 export const principles = [
-  ["O", "Ousadia", "Coragem para questionar o automático."],
-  ["C", "Constância", "Cadência que transforma plano em prática."],
-  ["O", "Organização", "Sistemas claros para crescer sem improviso."],
-  ["F", "Foco", "Energia direcionada ao que move o negócio."],
+  ["O", "Ousadia", "Criar, propor, testar e enfrentar decisões difíceis sem paralisar pelo medo."],
+  ["C", "Constância", "Sustentar execução e aprendizado mesmo quando o entusiasmo diminui."],
+  ["O", "Organização", "Transformar repetição em processo, informação em contexto e caos em sistema."],
+  ["F", "Foco", "Direcionar energia para o que move resultado e eliminar ruído."],
 ] as const;
