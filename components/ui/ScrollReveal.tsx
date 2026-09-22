@@ -11,7 +11,7 @@ export function ScrollReveal() {
       Array.from(group.children).forEach((child, index) => {
         const element = child as HTMLElement;
         element.dataset.revealChild = "true";
-        element.style.setProperty("--reveal-delay", `${index * 75}ms`);
+        element.style.setProperty("--reveal-delay", `${index * 120}ms`);
       });
     });
 
@@ -36,7 +36,7 @@ export function ScrollReveal() {
           }
         });
       },
-      { threshold: 0.12, rootMargin: "0px 0px -8% 0px" },
+      { threshold: 0.01, rootMargin: "0px 0px 18% 0px" },
     );
 
     elements.forEach((element) => observer.observe(element));

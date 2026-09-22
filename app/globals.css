@@ -30,7 +30,8 @@
   --radius-md: 0.8rem;
   --ease: cubic-bezier(0.22, 1, 0.36, 1);
   --duration: 320ms;
-  --reveal-duration: 760ms;
+  --reveal-duration: 1500ms;
+  --reveal-ease: cubic-bezier(0.16, 1, 0.3, 1);
   --z-header: 50;
 }
 
@@ -272,7 +273,7 @@ button { cursor: pointer; }
 .legal-notice { margin-bottom: 3rem; padding: 1.5rem; border: 0; border-radius: var(--radius-md); background: var(--ocof-brown); box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.22); }
 
 /* Scroll-led motion stays subtle: opacity and vertical movement only, so the layout never jumps. */
-html.reveal-ready [data-reveal], html.reveal-ready [data-reveal-group] > [data-reveal-child] { opacity: 0; transform: translate3d(0, 1.2rem, 0); transition: opacity var(--reveal-duration) var(--ease), transform var(--reveal-duration) var(--ease); transition-delay: var(--reveal-delay, 0ms); }
+html.reveal-ready [data-reveal], html.reveal-ready [data-reveal-group] > [data-reveal-child] { opacity: 0; transform: translate3d(0, 1.6rem, 0); transition: opacity var(--reveal-duration) var(--reveal-ease), transform var(--reveal-duration) var(--reveal-ease); transition-delay: var(--reveal-delay, 0ms); }
 html.reveal-ready [data-reveal].is-visible, html.reveal-ready [data-reveal-group].is-visible > [data-reveal-child] { opacity: 1; transform: none; }
 html.reveal-ready [data-reveal-group] > [data-reveal-child] { transition-property: opacity, transform, box-shadow, background, background-color; }
 html.reveal-ready [data-reveal-group].is-visible > [data-reveal-child]:hover { transform: translate3d(0, -0.35rem, 0); }
@@ -347,7 +348,6 @@ html.reveal-ready [data-reveal-group].is-visible > [data-reveal-child]:hover { t
   .principles-list::before, .principles-list::after { display: none; }
   .principles-list article, .principles-list article:nth-child(2n) { padding-inline: 0; }
   .principles-list article + article { box-shadow: 0 -1rem 2rem rgba(0, 0, 0, 0.08); }
-  html.reveal-ready [data-reveal], html.reveal-ready [data-reveal-group] > [data-reveal-child] { transition-duration: 560ms; }
 }
 
 @media (prefers-reduced-motion: reduce) {
