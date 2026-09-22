@@ -16,6 +16,13 @@ const archivo = localFont({
   display: "swap",
 });
 
+const jakarta = localFont({
+  src: "../public/fonts/PlusJakartaSans-Variable.ttf",
+  weight: "200 800",
+  variable: "--font-jakarta",
+  display: "swap",
+});
+
 export const metadata: Metadata = {
   metadataBase: new URL("https://ocof.vercel.app"),
   title: "OCOF | Operações de Crescimento Digital",
@@ -47,7 +54,7 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="pt-BR" className={`${manrope.variable} ${archivo.variable}`}>
+    <html lang="pt-BR" className={`${manrope.variable} ${archivo.variable} ${jakarta.variable}`}>
       <body>{children}</body>
     </html>
   );

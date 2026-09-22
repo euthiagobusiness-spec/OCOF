@@ -15,7 +15,7 @@ export default function HomePage() {
       <main id="conteudo">
         <section className="hero hero-intro" id="inicio">
           <div className="shell hero-intro-inner" data-reveal>
-            <div className="hero-intro-lockup">
+            <div className="hero-intro-lockup" data-reveal-group>
               <span className="hero-intro-wordmark brand-mark" aria-label="OCOF" />
               <p>Transformamos o valor que existe em crescimento exponencial</p>
             </div>
