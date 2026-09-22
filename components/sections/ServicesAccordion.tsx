@@ -13,7 +13,7 @@ export function ServicesAccordion({ items }: ServicesAccordionProps) {
   const [activeIndex, setActiveIndex] = useState<number | null>(0);
 
   return (
-    <div className="services-grid" aria-label="Produtos OCOF">
+    <div className="services-grid" data-reveal-group aria-label="Produtos OCOF">
       {items.map(([title, subtitle, text, label], index) => {
         const isActive = activeIndex === index;
         const panelId = `service-panel-${index + 1}`;

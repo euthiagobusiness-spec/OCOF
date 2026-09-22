@@ -25,7 +25,7 @@ export default function HomePage() {
                 <a className="text-link" href="#metodo">Entender como funciona <Arrow direction="up-right" /></a>
               </div>
             </div>
-            <div className="hero-visual" data-reveal="visual" aria-label="Imagens da identidade OCOF">
+            <div className="hero-visual" data-reveal="visual" data-reveal-group aria-label="Imagens da identidade OCOF">
               <div className="hero-image hero-image-main"><Image src="/ocof/hero-collage.jpg" alt="Composição de identidade OCOF em tons escuros" fill priority sizes="(max-width: 800px) 100vw, 52vw" /></div>
               <div className="hero-image hero-image-small hero-image-small-one"><Image src="/ocof/logo-dark.jpg" alt="Logo OCOF em fundo escuro" fill sizes="(max-width: 800px) 45vw, 20vw" /></div>
               <div className="hero-image hero-image-small hero-image-small-two"><Image src="/ocof/logo-stone.jpg" alt="Logo OCOF em textura de pedra" fill sizes="(max-width: 800px) 45vw, 20vw" /></div>
@@ -33,7 +33,7 @@ export default function HomePage() {
               <div className="stat-card stat-card-bottom"><strong>100%</strong><span>foco em previsibilidade</span></div>
             </div>
           </div>
-          <div className="shell hero-signals" data-reveal aria-label="Resumo da operação">
+          <div className="shell hero-signals" data-reveal data-reveal-group aria-label="Resumo da operação">
             <span>Encontramos o gargalo</span><span>Organizamos o que trava</span><span>Construímos o próximo passo</span>
           </div>
         </section>
@@ -103,7 +103,7 @@ export default function HomePage() {
 
         <section className="section culture-section" id="cultura">
           <div className="shell culture-grid" data-reveal>
-            <div className="culture-copy"><div className="section-kicker">Cultura OCOF</div><h2>Talento importa. <em>Execução sustenta.</em></h2><p>Na OCOF, valorizamos clareza, responsabilidade e postura profissional em cada etapa da operação.</p><div className="principles-list">{principles.map(([letter, title, text]) => <article key={title}><span>{letter}</span><div><h3>{title}</h3><p>{text}</p></div></article>)}</div></div>
+            <div className="culture-copy"><div className="section-kicker">Cultura OCOF</div><h2>Talento importa. <em>Execução sustenta.</em></h2><p>Na OCOF, valorizamos clareza, responsabilidade e postura profissional em cada etapa da operação.</p><div className="principles-list" data-reveal-group>{principles.map(([letter, title, text]) => <article key={title}><span>{letter}</span><div><h3>{title}</h3><p>{text}</p></div></article>)}</div></div>
             <div className="culture-image"><Image src="/ocof/logo-wall.jpg" alt="Logo OCOF em ambiente institucional escuro" fill sizes="(max-width: 800px) 100vw, 42vw" /></div>
           </div>
         </section>
