@@ -23,10 +23,10 @@ export const solutions = [
 ] as const;
 
 export const method = [
-  ["01", "Te mostramos o caminho", "Você entende o que fazer e em qual ordem."],
-  ["02", "Fazemos com você", "Sua equipe participa e aprende o método."],
-  ["03", "Fazemos por você", "Assumimos uma frente da operação para você."],
-  ["04", "Viramos parceiros", "Entramos na operação e dividimos o risco e o crescimento."],
+  ["01", "Mostramos o caminho", "Damos clareza sobre o que fazer e como avançar."],
+  ["02", "Construímos com você", "Orientamos as decisões e acompanhamos a execução."],
+  ["03", "Construímos para você", "Assumimos a execução e entregamos a solução."],
+  ["04", "Construímos como parceiros", "Unimos estratégia e execução para desenvolver e expandir a operação juntos."],
 ] as const;
 
 export const principles = [

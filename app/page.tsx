@@ -78,7 +78,7 @@ export default function HomePage() {
         <section className="section method-section" id="metodo">
           <div className="shell" data-reveal>
             <div className="section-kicker">Como trabalhamos</div>
-            <div className="section-heading-grid"><h2>Você escolhe quanto da operação a OCOF assume. <em>A ajuda acompanha a necessidade.</em></h2><p className="section-copy">Mostramos o caminho, fazemos com você, assumimos uma frente ou entramos como parceiros.</p></div>
+            <div className="section-heading-grid"><h2>Desenvolvemos o que cada <em>realidade exige.</em></h2></div>
             <ol className="method-grid" data-reveal-group>{method.map(([index, title, text]) => <li className="method-card" key={index}><span className="method-number">{index}</span><h3>{title}</h3><p>{text}</p></li>)}</ol>
           </div>
         </section>
