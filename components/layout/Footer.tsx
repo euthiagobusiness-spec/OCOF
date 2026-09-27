@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 const navigation = [
   ["Início", "/#inicio"],
   ["OCOF", "/#ocof"],
@@ -18,7 +20,7 @@ export function Footer() {
       <div className="shell footer-layout">
         <div className="footer-company">
           <a className="footer-wordmark" href="/#inicio" aria-label="OCOF — início">
-            OCOF
+            <Image src="/brand/ocof-wordmark.avif" alt="" width={590} height={205} />
           </a>
           <p>Ousadia • Constância • Organização • Foco</p>
           <p>Transformamos o valor que existe em crescimento exponencial</p>
