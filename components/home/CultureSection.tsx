@@ -1,4 +1,5 @@
 import { principles } from "@/components/content/site-content";
+import { InteractiveCTA } from "@/components/ui/InteractiveCTA";
 
 export function CultureSection() {
   return (
@@ -16,7 +17,7 @@ export function CultureSection() {
         <div className="closing glass-panel" id="contato" data-reveal>
           <p className="closing-question">Seu negócio já provou que tem valor. A pergunta é: até quando você vai aceitar crescer abaixo do potencial que construiu?</p>
           <p>Descubra o que está limitando seu crescimento e construa com a OCOF o que falta para ir além.</p>
-          <button className="closing-action" type="button" disabled>Construir com a OCOF</button>
+          <InteractiveCTA />
         </div>
       </div>
     </section>

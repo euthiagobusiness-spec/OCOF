@@ -110,6 +110,19 @@
   .closing-question { font-size: clamp(1.85rem, 6.5vw, 2.5rem); }
   .closing > p:not(.closing-question) { font-size: 1rem; }
   .closing-action { min-height: 2.75rem; }
+  .site-footer { padding-top: 2.5rem; }
+  .footer-layout { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 2rem 1.25rem; }
+  .footer-company { grid-column: 1 / -1; }
+  .footer-company p:first-of-type { max-width: 34ch; }
+  .footer-nav, .footer-legal { gap: .65rem; }
+  .footer-nav h2, .footer-legal h2 { font-size: .82rem; }
+  .footer-nav a, .footer-legal a { font-size: .875rem; }
+  .footer-bottom { margin-top: 2rem; font-size: .76rem; }
+  .legal-main { padding-top: 7rem; padding-bottom: 3rem; }
+  .legal-document h1 { font-size: clamp(2.15rem, 9vw, 3.2rem); }
+  .legal-intro { margin-bottom: 2.5rem; }
+  .legal-section { padding: 1.25rem 0; }
+  .legal-section p { font-size: .98rem; }
 }
 
 @media (max-width: 360px) {

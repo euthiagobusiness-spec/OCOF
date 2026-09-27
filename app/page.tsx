@@ -2,6 +2,7 @@ import { audiences, blockers, method } from "@/components/content/site-content";
 import { BrandSection } from "@/components/home/BrandSection";
 import { CardGridSection } from "@/components/home/CardGridSection";
 import { CultureSection } from "@/components/home/CultureSection";
+import { Footer } from "@/components/layout/Footer";
 import { HeroSection } from "@/components/home/HeroSection";
 import { SiteNavigation } from "@/components/home/SiteNavigation";
 import { SolutionsSection } from "@/components/home/SolutionsSection";
@@ -24,6 +25,7 @@ export default function HomePage() {
           <CultureSection />
         </div>
       </main>
+      <Footer />
     </>
   );
 }
