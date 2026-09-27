@@ -1,6 +1,5 @@
 import type { Metadata, Viewport } from "next";
 import localFont from "next/font/local";
-import { MotionProvider } from "@/components/ui/MotionProvider";
 import "./globals.css";
 
 const manrope = localFont({
@@ -17,23 +16,14 @@ const archivo = localFont({
   display: "swap",
 });
 
-const jakarta = localFont({
-  src: "../public/fonts/PlusJakartaSans-Variable.ttf",
-  weight: "200 800",
-  variable: "--font-jakarta",
-  display: "swap",
-});
-
 export const metadata: Metadata = {
   metadataBase: new URL("https://ocof.vercel.app"),
-  title: "OCOF | Operações de Crescimento Digital",
-  description:
-    "Entendemos onde o crescimento está travando e construímos a solução necessária para o próximo estágio.",
+  title: "OCOF",
+  description: "Transformamos o valor que existe em crescimento exponencial",
   alternates: { canonical: "/" },
   openGraph: {
-    title: "OCOF | Operações de Crescimento Digital",
-    description:
-      "Não construímos ações isoladas. Construímos operações de crescimento.",
+    title: "OCOF",
+    description: "Transformamos o valor que existe em crescimento exponencial",
     url: "/",
     siteName: "OCOF",
     locale: "pt_BR",
@@ -41,22 +31,21 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary",
-    title: "OCOF | Operações de Crescimento Digital",
-    description:
-      "Não construímos ações isoladas. Construímos operações de crescimento.",
+    title: "OCOF",
+    description: "Transformamos o valor que existe em crescimento exponencial",
   },
 };
 
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
-  themeColor: "#0E0E0E",
+  themeColor: "#101214",
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="pt-BR" className={`${manrope.variable} ${archivo.variable} ${jakarta.variable}`}>
-      <body><MotionProvider>{children}</MotionProvider></body>
+    <html lang="pt-BR" className={`${manrope.variable} ${archivo.variable}`}>
+      <body>{children}</body>
     </html>
   );
 }

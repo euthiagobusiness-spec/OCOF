@@ -1,109 +1,142 @@
-import { Header } from "@/components/navigation/Header";
-import { Footer } from "@/components/layout/Footer";
-import { Arrow } from "@/components/ui/Arrow";
-import { LiquidGlassButton } from "@/components/ui/LiquidGlassButton";
-import { ServicesAccordion } from "@/components/sections/ServicesAccordion";
+import Image from "next/image";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
-import { HeroFloatGallery } from "@/components/ui/HeroFloatGallery";
 import { audiences, blockers, method, principles, solutions } from "@/components/content/site-content";
+
+const navigation = [
+  ["Início", "#inicio"],
+  ["OCOF", "#ocof"],
+  ["Serviços", "#solucoes"],
+  ["Método", "#como-atuamos"],
+  ["Cultura", "#cultura"],
+  ["Contato", "#contato"],
+] as const;
 
 export default function HomePage() {
   return (
     <>
-      <a className="skip-link" href="#conteudo">Pular para o conteúdo</a>
-      <Header />
+      <header className="site-curtain">
+        <nav className="curtain-nav shell" aria-label="Navegação principal">
+          {navigation.map(([label, href]) => <a key={label} href={href}>{label}</a>)}
+        </nav>
+      </header>
       <ScrollReveal />
-      <div className="single-page-canvas">
-      <main id="conteudo">
-        <section className="hero hero-intro" id="inicio">
-          <div className="hero-stage">
-            <HeroFloatGallery />
-            <div className="shell hero-intro-inner">
-              <div className="hero-intro-lockup" data-reveal-group>
-                <span className="hero-intro-wordmark brand-mark" data-reveal-repeat aria-label="OCOF" />
-                <p>Transformamos o valor que existe em crescimento exponencial</p>
+      <main>
+        <section className="chapter chapter-intro" id="inicio">
+          <div className="hero-inner shell">
+            <Image className="hero-logo" src="/brand/ocof-wordmark.avif" alt="OCOF" width={590} height={205} priority />
+            <h1>Transformamos o valor que existe em crescimento exponencial</h1>
+          </div>
+        </section>
+
+        <div className="office-backdrop" aria-hidden="true" />
+        <div className="story">
+          <section className="chapter" id="ocof">
+            <div className="shell">
+              <div className="manifesto-layout">
+                <div className="intro-statement glass-panel" data-reveal>
+                  <p>Ousadia • Constância • Organização • Foco</p>
+                  <p>Este é o ambiente de construção da OCOF.</p>
+                  <p>Aqui valorizamos execução acima de intenção, responsabilidade acima de desculpas e crescimento acima da zona de conforto.</p>
+                  <p>Cada projeto, lançamento e operação deve refletir os princípios que sustentam a empresa: ousadia para criar, constância para evoluir, organização para escalar e foco para entregar resultados.</p>
+                </div>
+                <div className="artifact-gallery" aria-hidden="true">
+                  <div className="artifact artifact-primary"><Image src="/ocof/hero-collage.jpg" alt="" fill sizes="(max-width: 700px) 70vw, 27vw" /></div>
+                  <div className="artifact artifact-secondary"><Image src="/brand/ocof-agenda.jpg" alt="" fill sizes="(max-width: 700px) 35vw, 13vw" /></div>
+                  <div className="artifact artifact-tertiary"><Image src="/ocof/logo-wall.jpg" alt="" fill sizes="(max-width: 700px) 35vw, 13vw" /></div>
+                </div>
+              </div>
+              <h2 data-reveal>Crescimento exige duas forças: um mercado que escolhe e uma empresa que sustenta.</h2>
+              <div className="two-column" data-reveal-group>
+                <article className="text-block glass-panel">
+                  <h3>Mercado</h3>
+                  <p>Fazemos o mercado escolher você.</p>
+                  <p>Posicionamento, produto, oferta, aquisição e vendas.</p>
+                </article>
+                <article className="text-block glass-panel">
+                  <h3>Empresa</h3>
+                  <p>Construímos a estrutura que sustenta o crescimento.</p>
+                  <p>Processos, pessoas, gestão, dados, tecnologia e execução.</p>
+                </article>
               </div>
             </div>
-            <p className="hero-guidance">Role para navegar · a experiência se revela no movimento</p>
-          </div>
-        </section>
+          </section>
 
-        <section className="section forces-section" id="ocof">
-          <div className="shell forces-grid" data-reveal>
-            <div className="forces-heading">
-              <div className="section-kicker">Duas forças</div>
-              <h2>Crescimento exige duas forças: <em>um mercado que escolhe e uma empresa que sustenta.</em></h2>
-            </div>
-            <div className="forces-content">
-              <div className="forces-list" data-reveal-group>
-                <article className="force-card"><span className="card-index">01</span><h3>Mercado</h3><p>Fazemos o mercado escolher você.</p><small>Posicionamento, produto, oferta, aquisição e vendas.</small></article>
-                <article className="force-card"><span className="card-index">02</span><h3>Empresa</h3><p>Construímos a estrutura que sustenta o crescimento.</p><small>Processos, pessoas, gestão, dados, tecnologia e execução.</small></article>
+          <section className="chapter" id="para-quem">
+            <div className="shell">
+              <h2 data-reveal>Para quem já construiu algo de valor.</h2>
+              <div className="audience-grid" data-reveal-group>
+                {audiences.map(([title, description]) => (
+                  <article className="text-block glass-panel" key={title}>
+                    <h3>{title}</h3>
+                    <p>{description}</p>
+                  </article>
+                ))}
               </div>
             </div>
-          </div>
-        </section>
+          </section>
 
-        <section className="section dark-section diagnostic-section">
-          <div className="shell" data-reveal>
-            <div className="section-kicker">Como encontramos o problema</div>
-            <div className="section-heading-grid"><h2>Primeiro achamos o gargalo. <em>Depois resolvemos.</em></h2><p className="section-copy">O problema pode estar no mercado: ninguém entende, deseja ou compra. Ou na operação: a empresa vende, mas não consegue entregar, repetir e crescer. A OCOF descobre onde agir primeiro.</p></div>
-            <ol className="diagnostic-steps" data-reveal-group aria-label="Etapas do diagnóstico"><li className="diagnostic-step is-active"><span>01</span><div><strong>Mercado</strong><p>As pessoas entendem e querem comprar?</p></div></li><li className="diagnostic-step"><span>02</span><div><strong>Gargalo</strong><p>O que está impedindo o próximo passo?</p></div></li><li className="diagnostic-step"><span>03</span><div><strong>Operação</strong><p>Quem faz, como faz e como mede?</p></div></li><li className="diagnostic-step"><span>04</span><div><strong>Próximo estágio</strong><p>O que muda primeiro para avançar?</p></div></li></ol>
-          </div>
-        </section>
+          <section className="chapter" id="gargalos">
+            <div className="shell">
+              <h2 data-reveal>Resolvemos os gargalos que limitam o crescimento.</h2>
+              <div className="blockers-grid" data-reveal-group>
+                {blockers.map(([title, description]) => (
+                  <article className="text-block glass-panel" key={title}>
+                    <h3>{title}</h3>
+                    <p>{description}</p>
+                  </article>
+                ))}
+              </div>
+            </div>
+          </section>
 
-        <section className="section audience-section" id="publico">
-          <div className="shell" data-reveal>
-            <div className="section-kicker">Para quem construímos</div>
-            <div className="section-heading-grid audience-heading"><h2>Para quem já construiu <em>algo de valor.</em></h2></div>
-            <div className="audience-grid" data-reveal-group>{audiences.map(([index, title, text]) => <article className="audience-card" key={title}><span className="card-index">{index}</span><h3>{title}</h3><p>{text}</p><span className="card-arrow" aria-hidden="true">↗</span></article>)}</div>
-          </div>
-        </section>
+          <section className="chapter" id="solucoes">
+            <div className="shell">
+              <h2 data-reveal>Atuamos conforme a realidade.</h2>
+              <div className="solutions-list" data-reveal-group>
+                {solutions.map(([title, description]) => (
+                  <article className="solution-row glass-panel" key={title}>
+                    <h3>{title}</h3>
+                    <p>{description}</p>
+                  </article>
+                ))}
+              </div>
+            </div>
+          </section>
 
-        <section className="section dark-section blockers-section" id="gargalos">
-          <div className="shell" data-reveal>
-            <div className="section-kicker">O que resolvemos</div>
-            <div className="section-heading-grid blockers-heading"><h2>Resolvemos os gargalos que <em>limitam o crescimento.</em></h2></div>
-            <div className="blockers-grid" data-reveal-group>{blockers.map(([title, text, index]) => <article className="blocker-card" key={title}><span className="card-index">{index}</span><h3>{title}</h3><p>{text}</p><span className="card-arrow" aria-hidden="true">↗</span></article>)}</div>
-          </div>
-        </section>
+          <section className="chapter" id="como-atuamos">
+            <div className="shell">
+              <h2 data-reveal>Desenvolvemos o que cada realidade exige.</h2>
+              <div className="method-grid" data-reveal-group>
+                {method.map(([title, description]) => (
+                  <article className="text-block glass-panel" key={title}>
+                    <h3>{title}</h3>
+                    <p>{description}</p>
+                  </article>
+                ))}
+              </div>
+            </div>
+          </section>
 
-        <section className="section services-section" id="servicos">
-          <div className="shell" data-reveal>
-            <div className="section-kicker">Produtos OCOF</div>
-            <div className="section-heading-grid"><h2>Atuamos conforme a <em>realidade.</em></h2></div>
-            <ServicesAccordion items={solutions} />
-          </div>
-        </section>
-
-        <section className="section method-section" id="metodo">
-          <div className="shell" data-reveal>
-            <div className="section-kicker">Como trabalhamos</div>
-            <div className="section-heading-grid"><h2>Desenvolvemos o que cada <em>realidade exige.</em></h2></div>
-            <ol className="method-grid" data-reveal-group>{method.map(([index, title, text]) => <li className="method-card" key={index}><span className="method-number">{index}</span><h3>{title}</h3><p>{text}</p></li>)}</ol>
-          </div>
-        </section>
-
-        <section className="section differential-section dark-section">
-          <div className="shell" data-reveal>
-            <div className="section-kicker">Diferencial</div>
-            <div className="section-heading-grid"><h2>Não começamos por um serviço. <em>Começamos pelo problema.</em></h2><p className="section-copy">Primeiro entendemos onde o negócio perde receita, tempo ou controle. Só depois definimos o trabalho.</p></div>
-            <div className="comparison-grid" data-reveal-group><article className="comparison-card comparison-muted"><span className="card-index">ANTES</span><h3>Serviço isolado</h3><ul><li>Campanhas sem integração</li><li>Conteúdo sem conversão</li><li>Tráfego sem estrutura</li><li>Páginas sem estratégia</li></ul></article><article className="comparison-card comparison-highlight"><span className="card-index">DEPOIS</span><h3>Operação OCOF</h3><ul><li>Diagnóstico</li><li>Posicionamento</li><li>Oferta</li><li>Funil</li><li>Dados e escala</li></ul></article></div>
-            <p className="comparison-close">Mais ações não consertam um negócio travado. É preciso resolver o gargalo certo.</p>
-          </div>
-        </section>
-
-        <section className="section culture-section" id="cultura">
-          <div className="shell culture-grid" data-reveal>
-            <div className="culture-copy"><div className="section-kicker">Cultura OCOF</div><h2>Nossa cultura está no nosso <em>nome.</em></h2><div className="principles-list" data-reveal-group>{principles.map(([letter, title, text]) => <article key={title}><span>{letter}</span><div><h3>{title}</h3><p>{text}</p></div></article>)}</div></div>
-          </div>
-        </section>
-
-        <section className="section closing-section" id="contato">
-          <div className="shell closing-inner" data-reveal><div className="section-kicker">Próximo estágio</div><h2>Seu negócio já provou que tem valor. <em>A pergunta é: até quando você vai aceitar crescer abaixo do potencial que construiu?</em></h2><p>Descubra o que está limitando seu crescimento e construa com a OCOF o que falta para ir além.</p><LiquidGlassButton className="closing-cta" href="mailto:contato@ocof.com.br">Construir com a OCOF <Arrow direction="right" /></LiquidGlassButton></div>
-        </section>
+          <section className="chapter chapter-final" id="cultura">
+            <div className="shell">
+              <h2 data-reveal>Nossa cultura está no nosso nome.</h2>
+              <div className="principles-grid" data-reveal-group>
+                {principles.map(([title, description]) => (
+                  <article className="text-block glass-panel" key={title}>
+                    <h3>{title}</h3>
+                    <p>{description}</p>
+                  </article>
+                ))}
+              </div>
+              <div className="closing glass-panel" id="contato" data-reveal>
+                <p className="closing-question">Seu negócio já provou que tem valor. A pergunta é: até quando você vai aceitar crescer abaixo do potencial que construiu?</p>
+                <p>Descubra o que está limitando seu crescimento e construa com a OCOF o que falta para ir além.</p>
+                <button className="closing-action" type="button" disabled>Construir com a OCOF</button>
+              </div>
+            </div>
+          </section>
+        </div>
       </main>
-      <Footer />
-      </div>
     </>
   );
 }
