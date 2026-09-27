@@ -9,13 +9,13 @@
   .shell { width: min(calc(100% - 2rem), var(--shell)); }
   .office-backdrop {
     background-image:
-      linear-gradient(rgba(0, 0, 0, .78), rgba(0, 0, 0, .86)),
+      linear-gradient(rgba(0, 0, 0, .86), rgba(0, 0, 0, .91)),
       url('/ocof/ocof-office-editorial-warm-mobile-2026.webp');
     background-position: center;
   }
 
   .site-curtain { padding: .45rem 0; }
-  .site-curtain:focus-within { backdrop-filter: blur(12px) !important; }
+  .site-curtain::before { backdrop-filter: blur(12px); }
   .curtain-inner { gap: .65rem; }
   .curtain-brand { flex-basis: 3.25rem; }
   .curtain-nav {

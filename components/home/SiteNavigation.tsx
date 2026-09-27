@@ -20,7 +20,6 @@ export function SiteNavigation() {
     if (!header) return;
 
     const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
-    const compactLayout = window.matchMedia("(max-width: 640px)");
     let frame = 0;
 
     const updateReveal = () => {
@@ -35,9 +34,6 @@ export function SiteNavigation() {
 
         header.style.opacity = String(progress);
         header.style.transform = `translateY(${(1 - progress) * -10}px)`;
-        header.style.backgroundColor = `rgba(8, 8, 8, ${progress * 0.72})`;
-        header.style.backdropFilter = `blur(${progress * (compactLayout.matches ? 12 : 18)}px)`;
-        header.style.borderBottomColor = `rgba(255, 255, 255, ${progress * 0.16})`;
         header.style.pointerEvents = progress > 0.02 ? "auto" : "none";
       });
     };
