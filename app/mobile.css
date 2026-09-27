@@ -60,7 +60,10 @@
     line-height: 1.45;
   }
   .intro-statement p:first-child { font-size: 1.15rem; line-height: 1.3; }
-  .artifact-gallery { height: 13rem; }
+  .artifact-gallery { height: 22rem; }
+  .artifact-primary { inset: 2% 10% 24% 5%; }
+  .artifact-secondary { width: 35%; height: 34%; right: 5%; bottom: 17%; }
+  .artifact-tertiary { width: 33%; height: 30%; right: 5%; top: 2%; }
 
   .two-column, .blockers-grid { grid-template-columns: 1fr; }
   .audience-grid, .method-grid, .principles-grid {
@@ -97,7 +100,7 @@
   .solution-row h3 { font-size: 1.42rem; }
   .solution-row p { font-size: 1rem; line-height: 1.45; }
 
-  .page-two-action { margin-top: .5rem; }
+  .page-two-action { left: 1.1rem; bottom: .9rem; }
   .closing { gap: 1.25rem; margin-top: 3.75rem; padding: 1.35rem; }
   .closing-question { font-size: clamp(1.85rem, 6.5vw, 2.5rem); }
   .closing > p:not(.closing-question) { font-size: 1rem; }
