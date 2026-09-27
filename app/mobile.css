@@ -33,6 +33,9 @@
     font-size: clamp(.52rem, 2.1vw, .65rem);
     letter-spacing: .045em;
   }
+  .site-curtain.is-expanded .curtain-nav .curtain-link-later {
+    display: grid;
+  }
 
   .chapter {
     min-height: auto;
@@ -45,8 +48,8 @@
     padding-top: 5rem;
     padding-bottom: 4rem;
   }
-  .hero-logo { width: min(67vw, 20rem); }
-  .hero-inner h1 { max-width: 20ch; font-size: clamp(2.1rem, 8.6vw, 3.4rem); }
+  .hero-logo { width: min(72vw, 22rem); }
+  .hero-inner h1 { max-width: 20ch; font-size: clamp(1.85rem, 7.5vw, 3rem); }
 
   .chapter h2 {
     max-width: 19ch;

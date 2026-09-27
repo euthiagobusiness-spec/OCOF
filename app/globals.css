@@ -7,7 +7,8 @@ h1,h2,h3{font-family:var(--font-archivo),Arial,sans-serif;font-weight:700;letter
 button{font:inherit}
 ::selection{background:#f0f0f0;color:#000}
 .shell{width:min(calc(100% - 4rem),var(--shell));margin-inline:auto}
-.site-curtain{position:fixed;z-index:20;inset:0 0 auto;padding:1rem 0;background:transparent;opacity:0;transform:translateY(-10px);pointer-events:none}
+.site-curtain{position:fixed;z-index:20;inset:0 0 auto;padding:1rem 0;background:transparent;opacity:.76;transform:translateY(-5px);pointer-events:auto;transition:opacity .5s ease,transform .5s ease}
+.site-curtain.is-expanded{opacity:1;transform:translateY(0)}
 .site-curtain::before{position:absolute;inset:0 0 -1.5rem;z-index:0;content:"";background:linear-gradient(180deg,rgba(8,8,8,.78),rgba(8,8,8,.5) 52%,transparent);backdrop-filter:blur(18px);pointer-events:none}
 .site-curtain:focus-within{opacity:1!important;transform:translateY(0)!important;pointer-events:auto}
 .curtain-inner{position:relative;z-index:1;display:flex;justify-content:space-between;align-items:center;gap:2rem}
@@ -15,6 +16,9 @@ button{font:inherit}
 .curtain-brand img{display:block;width:100%;height:auto}
 .curtain-nav{display:flex;justify-content:flex-end;align-items:center;gap:clamp(1rem,2.1vw,2.4rem)}
 .curtain-nav a{color:#eaeaea;text-decoration:none;text-transform:uppercase;letter-spacing:.15em;font-size:.7rem;font-weight:750}
+.site-curtain .curtain-nav .curtain-link-later{display:none}
+.site-curtain.is-expanded .curtain-link-later{display:inline-block;animation:curtain-link-arrive .42s ease both}
+@keyframes curtain-link-arrive{from{opacity:0;transform:translateY(-.4rem)}to{opacity:1;transform:translateY(0)}}
 .curtain-nav a:hover{color:#fff;text-shadow:0 0 12px rgba(255,255,255,.6)}
 .curtain-brand:focus-visible{filter:drop-shadow(0 0 9px rgba(255,255,255,.75))}
 .curtain-nav a:focus-visible,.closing-action:focus-visible{outline:none;box-shadow:0 0 20px rgba(255,255,255,.4)}
@@ -24,8 +28,8 @@ button{font:inherit}
 .chapter p{text-wrap:pretty}
 .chapter-intro{z-index:2;min-height:100svh;padding:0;background:#000}
 .hero-inner{min-height:100svh;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:clamp(2rem,6vh,5rem);padding-top:6rem;padding-bottom:5rem;text-align:center}
-.hero-logo{display:block;width:min(55vw,34rem);height:auto;mix-blend-mode:screen;opacity:0;clip-path:inset(0 50% 0 50%);animation:logo-open 2.2s cubic-bezier(.2,.65,.2,1) .2s forwards}
-.hero-inner h1{max-width:18ch;font-size:clamp(2.5rem,5.5vw,6rem);line-height:1.04;text-wrap:balance;opacity:0;animation:headline-arrive 1.2s ease 1.5s forwards}
+.hero-logo{display:block;width:min(70vw,44rem);height:auto;mix-blend-mode:screen;opacity:0;clip-path:inset(0 50% 0 50%);animation:logo-open 2.2s cubic-bezier(.2,.65,.2,1) .2s forwards}
+.hero-inner h1{max-width:18ch;font-size:clamp(2.1rem,4.2vw,4.5rem);line-height:1.04;text-wrap:balance;opacity:0;animation:headline-arrive 1.2s ease 1.5s forwards}
 @keyframes logo-open{0%{opacity:0;clip-path:inset(0 50% 0 50%);transform:scale(.88)}35%{opacity:1}100%{opacity:1;clip-path:inset(0 0 0 0);transform:scale(1)}}
 @keyframes headline-arrive{from{opacity:0;transform:translateY(1.5rem)}to{opacity:1;transform:translateY(0)}}
 .office-backdrop{position:fixed;z-index:0;inset:0;background-image:linear-gradient(rgba(0,0,0,.86),rgba(0,0,0,.91)),url('/ocof/ocof-office-editorial-warm-2026.webp');background-position:center;background-size:cover;pointer-events:none}
@@ -111,4 +115,4 @@ button{font:inherit}
 .skip-link{position:fixed;z-index:30;top:.5rem;left:.5rem;padding:.7rem 1rem;transform:translateY(-160%);border-radius:.4rem;background:#fff;color:#000}
 .skip-link:focus{transform:translateY(0);box-shadow:0 10px 35px rgba(255,255,255,.2)}
 @media(prefers-reduced-motion:reduce){.closing-action,.closing-action::before,.footer-nav a,.footer-legal a{transition:none}}
-@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.curtain-nav a,.hero-logo,.hero-inner h1,.artifact{animation:none;opacity:1;transform:none;clip-path:none}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.site-curtain{transition:none}.curtain-nav a,.hero-logo,.hero-inner h1,.artifact{animation:none;opacity:1;transform:none;clip-path:none}}
