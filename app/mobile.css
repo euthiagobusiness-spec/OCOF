@@ -56,10 +56,15 @@
   .intro-statement {
     gap: .75rem;
     padding: 1.35rem;
+    padding-inline: .75rem;
     font-size: 1rem;
     line-height: 1.45;
   }
-  .intro-statement p:first-child { font-size: 1.15rem; line-height: 1.3; }
+  .intro-statement p:first-child {
+    font-size: clamp(.66rem, 3.45vw, .95rem);
+    line-height: 1.3;
+    letter-spacing: -.035em;
+  }
   .artifact-gallery { height: 22rem; }
   .artifact-primary { inset: 2% 10% 24% 5%; }
   .artifact-secondary { width: 35%; height: 34%; right: 5%; bottom: 17%; }
@@ -108,5 +113,7 @@
 }
 
 @media (max-width: 360px) {
+  .intro-statement { padding: .9rem; }
+  .intro-statement p:first-child { font-size: clamp(.65rem, 3.25vw, .8rem); }
   .audience-grid, .method-grid, .principles-grid { grid-template-columns: 1fr; }
 }
