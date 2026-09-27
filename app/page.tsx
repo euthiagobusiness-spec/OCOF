@@ -58,6 +58,7 @@ export default function HomePage() {
                   <p>Processos, pessoas, gestão, dados, tecnologia e execução.</p>
                 </article>
               </div>
+              <a className="closing-action page-two-action" href="#contato" data-reveal>Construir com a OCOF</a>
             </div>
           </section>
 
