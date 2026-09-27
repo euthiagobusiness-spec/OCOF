@@ -1,6 +1,7 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import Image from "next/image";
+import { useEffect, useRef, useState } from "react";
 
 const navigation = [
   ["Início", "#inicio"],
@@ -13,6 +14,7 @@ const navigation = [
 
 export function SiteNavigation() {
   const headerRef = useRef<HTMLElement>(null);
+  const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
     const header = headerRef.current;
@@ -28,8 +30,11 @@ export function SiteNavigation() {
         const progress = Math.min(1, Math.max(0, window.scrollY / (window.innerHeight * 0.75)));
         header.style.setProperty("--curtain-opacity", String(0.86 + progress * 0.14));
         header.style.setProperty("--curtain-offset", `${-2 * (1 - progress)}px`);
-        header.style.setProperty("--curtain-glass", String(0.08 + progress * 0.3));
-        header.style.setProperty("--curtain-glass-soft", String(0.05 + progress * 0.2));
+        header.style.setProperty("--curtain-glass", String(0.12 + progress * 0.82));
+        header.style.setProperty("--curtain-glass-soft", String(0.06 + progress * 0.78));
+
+        const compact = window.scrollY >= window.innerHeight * 0.65;
+        setIsScrolled((current) => current === compact ? current : compact);
       });
     };
 
@@ -45,13 +50,22 @@ export function SiteNavigation() {
   }, []);
 
   return (
-    <header ref={headerRef} className="site-curtain">
+    <header ref={headerRef} className={`site-curtain${isScrolled ? " is-scrolled" : ""}`}>
       <div className="curtain-inner shell">
         <nav className="curtain-nav" aria-label="Navegação principal">
           {navigation.map(([label, href]) => (
             <a key={label} href={href}>{label}</a>
           ))}
         </nav>
+        <a
+          className="curtain-brand"
+          href="#inicio"
+          aria-label="OCOF — início"
+          aria-hidden={!isScrolled || undefined}
+          tabIndex={isScrolled ? 0 : -1}
+        >
+          <Image src="/brand/ocof-wordmark.avif" alt="" width={590} height={205} priority />
+        </a>
       </div>
     </header>
   );

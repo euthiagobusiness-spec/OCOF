@@ -24,6 +24,9 @@
     justify-content: center;
     text-align: center;
   }
+  .curtain-inner { min-height: 3.5rem; }
+  .site-curtain.is-scrolled .curtain-nav { width: calc(100% - 4.25rem); gap: 0 .2rem; }
+  .curtain-brand { width: 3.75rem; }
   .curtain-nav a {
     display: grid;
     place-items: center;
