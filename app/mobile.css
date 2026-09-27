@@ -7,6 +7,12 @@
 @media (max-width: 640px) {
   html { scroll-padding-top: 5.5rem; }
   .shell { width: min(calc(100% - 2rem), var(--shell)); }
+  .office-backdrop {
+    background-image:
+      linear-gradient(rgba(0, 0, 0, .65), rgba(0, 0, 0, .74)),
+      url('/ocof/ocof-office-editorial-warm-mobile-2026.webp');
+    background-position: center;
+  }
 
   .site-curtain { padding: .5rem 0; }
   .curtain-nav {
