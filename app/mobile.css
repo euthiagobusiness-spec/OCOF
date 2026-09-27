@@ -1,4 +1,4 @@
-@media (max-width: 900px) {
+@media (max-width: 1040px) {
   .manifesto-layout { grid-template-columns: 1fr; }
   .artifact-gallery { width: min(100%, 35rem); margin-inline: auto; }
   .audience-grid, .blockers-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
