@@ -46,7 +46,7 @@
   .chapter h3 { font-size: 1.32rem; }
 
   .glass-panel { border-radius: .75rem; }
-  .manifesto-layout { gap: 1.25rem; margin-bottom: 3.75rem; }
+  .manifesto-layout { gap: 1.25rem; margin-bottom: 2.75rem; }
   .intro-statement {
     gap: .75rem;
     padding: 1.35rem;
@@ -91,7 +91,7 @@
   .solution-row h3 { font-size: 1.42rem; }
   .solution-row p { font-size: 1rem; line-height: 1.45; }
 
-  .page-two-action { margin-top: 1.5rem; }
+  .page-two-action { margin-top: .5rem; }
   .closing { gap: 1.25rem; margin-top: 3.75rem; padding: 1.35rem; }
   .closing-question { font-size: clamp(1.85rem, 6.5vw, 2.5rem); }
   .closing > p:not(.closing-question) { font-size: 1rem; }

@@ -31,6 +31,7 @@ button{font:inherit}
 .manifesto-layout{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);align-items:center;gap:clamp(2rem,5vw,5rem);margin-bottom:clamp(6rem,11vw,11rem)}
 .intro-statement{display:grid;gap:1.35rem;padding:clamp(1.8rem,4vw,4rem);color:var(--muted);font-size:clamp(1rem,1.25vw,1.18rem)}
 .intro-statement p:first-child{color:#fff;font-size:clamp(1.25rem,2vw,1.8rem);font-weight:700}
+.artifact-showcase{display:grid;justify-items:end;min-width:0}
 .artifact-gallery{position:relative;height:clamp(22rem,38vw,37rem)}
 .artifact{position:absolute;overflow:hidden;border:1px solid var(--line);border-radius:.8rem;box-shadow:0 20px 55px rgba(0,0,0,.5);background:#111}
 .artifact img{object-fit:cover;filter:grayscale(1) brightness(.82)}
@@ -58,7 +59,7 @@ button{font:inherit}
 .closing-question{color:#fff;font-family:var(--font-archivo),Arial,sans-serif;font-size:clamp(2.1rem,4.4vw,4.5rem);font-weight:700;letter-spacing:-.045em;line-height:1.08}
 .closing>p:not(.closing-question){max-width:47ch;color:var(--muted);font-size:clamp(1.05rem,1.6vw,1.4rem)}
 .closing-action{min-height:3.5rem;padding:.9rem 1.5rem;border:1px solid #f0f0f0;border-radius:.4rem;background:#f0f0f0;color:#000;font-size:.96rem;font-weight:750}
-.page-two-action{display:inline-flex;align-items:center;justify-content:center;width:max-content;margin-top:clamp(2rem,4vw,4rem);text-decoration:none;transition:background-color .2s ease,color .2s ease}
+.page-two-action{display:inline-flex;align-items:center;justify-content:center;width:max-content;margin-top:clamp(.5rem,1vw,1rem);text-decoration:none;transition:background-color .2s ease,color .2s ease}
 .page-two-action:hover{background:#d0d0d0}
 .closing-action:disabled{opacity:.68;cursor:not-allowed}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.curtain-nav a,.hero-logo,.hero-inner h1{animation:none;opacity:1;transform:none;clip-path:none}}
