@@ -1,7 +1,6 @@
 "use client";
 
-import Image from "next/image";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 
 const navigation = [
   ["Início", "#inicio"],
@@ -14,7 +13,6 @@ const navigation = [
 
 export function SiteNavigation() {
   const headerRef = useRef<HTMLElement>(null);
-  const [isExpanded, setIsExpanded] = useState(false);
 
   useEffect(() => {
     const header = headerRef.current;
@@ -27,59 +25,32 @@ export function SiteNavigation() {
 
       frame = window.requestAnimationFrame(() => {
         frame = 0;
-        const nextPage = document.getElementById("ocof");
-        const scrollOffset = nextPage
-          ? (Number.parseFloat(window.getComputedStyle(nextPage).scrollMarginTop) || 0)
-            + (Number.parseFloat(window.getComputedStyle(document.documentElement).scrollPaddingTop) || 0)
-          : 0;
-        const expanded = nextPage
-          ? nextPage.getBoundingClientRect().top <= scrollOffset + 16
-          : window.scrollY >= window.innerHeight * 0.9;
-
-        setIsExpanded((current) => current === expanded ? current : expanded);
+        const progress = Math.min(1, Math.max(0, window.scrollY / (window.innerHeight * 0.75)));
+        header.style.setProperty("--curtain-opacity", String(0.86 + progress * 0.14));
+        header.style.setProperty("--curtain-offset", `${-2 * (1 - progress)}px`);
+        header.style.setProperty("--curtain-glass", String(0.08 + progress * 0.3));
+        header.style.setProperty("--curtain-glass-soft", String(0.05 + progress * 0.2));
       });
     };
 
     updateReveal();
-    const settleTimer = window.setTimeout(updateReveal, 300);
     window.addEventListener("scroll", updateReveal, { passive: true });
     window.addEventListener("resize", updateReveal);
-    window.addEventListener("hashchange", updateReveal);
-    window.addEventListener("pageshow", updateReveal);
 
     return () => {
       window.removeEventListener("scroll", updateReveal);
       window.removeEventListener("resize", updateReveal);
-      window.removeEventListener("hashchange", updateReveal);
-      window.removeEventListener("pageshow", updateReveal);
-      window.clearTimeout(settleTimer);
       if (frame) window.cancelAnimationFrame(frame);
     };
   }, []);
 
   return (
-    <header ref={headerRef} className={`site-curtain${isExpanded ? " is-expanded" : ""}`}>
+    <header ref={headerRef} className="site-curtain">
       <div className="curtain-inner shell">
-        <a className="curtain-brand" href="#inicio" aria-label="OCOF — início">
-          <Image src="/brand/ocof-wordmark.avif" alt="" width={590} height={205} priority />
-        </a>
         <nav className="curtain-nav" aria-label="Navegação principal">
-          {navigation.map(([label, href], index) => {
-            const appearsOnSecondPage = index >= 3;
-            const hidden = appearsOnSecondPage && !isExpanded;
-
-            return (
-              <a
-                key={label}
-                className={appearsOnSecondPage ? "curtain-link-later" : undefined}
-                href={href}
-                aria-hidden={hidden || undefined}
-                tabIndex={hidden ? -1 : undefined}
-              >
-                {label}
-              </a>
-            );
-          })}
+          {navigation.map(([label, href]) => (
+            <a key={label} href={href}>{label}</a>
+          ))}
         </nav>
       </div>
     </header>

@@ -14,27 +14,22 @@
     background-position: center;
   }
 
-  .site-curtain { padding: .45rem 0; }
+  .site-curtain { padding: .35rem 0; }
   .site-curtain::before { backdrop-filter: blur(12px); }
-  .curtain-inner { gap: .65rem; }
-  .curtain-brand { flex-basis: 3.25rem; }
   .curtain-nav {
     display: grid;
-    flex: 1;
+    width: 100%;
     grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 0 .35rem;
-    justify-content: end;
+    gap: 0 .25rem;
+    justify-content: center;
     text-align: center;
   }
   .curtain-nav a {
     display: grid;
     place-items: center;
     min-height: 1.75rem;
-    font-size: clamp(.52rem, 2.1vw, .65rem);
-    letter-spacing: .045em;
-  }
-  .site-curtain.is-expanded .curtain-nav .curtain-link-later {
-    display: grid;
+    font-size: clamp(.6rem, 2.6vw, .72rem);
+    letter-spacing: .035em;
   }
 
   .chapter {
@@ -44,12 +39,12 @@
   .chapter-intro { min-height: 100svh; padding: 0; }
   .hero-inner {
     min-height: 100svh;
-    gap: 1.75rem;
-    padding-top: 5rem;
-    padding-bottom: 4rem;
+    gap: 1.5rem;
+    padding-top: 4.75rem;
+    padding-bottom: 3.5rem;
   }
-  .hero-logo { width: min(72vw, 22rem); }
-  .hero-inner h1 { max-width: 20ch; font-size: clamp(1.85rem, 7.5vw, 3rem); }
+  .hero-logo { width: min(68vw, 20rem); }
+  .hero-inner h1 { max-width: 20ch; font-size: clamp(1.7rem, 6.6vw, 2.65rem); }
 
   .chapter h2 {
     max-width: 19ch;
@@ -69,7 +64,7 @@
     line-height: 1.45;
   }
   .intro-statement p:first-child {
-    font-size: clamp(.66rem, 3.45vw, .95rem);
+    font-size: clamp(.72rem, 3.2vw, .98rem);
     line-height: 1.3;
     letter-spacing: -.035em;
   }
@@ -135,6 +130,6 @@
 
 @media (max-width: 360px) {
   .intro-statement { padding: .9rem; }
-  .intro-statement p:first-child { font-size: clamp(.65rem, 3.25vw, .8rem); }
+  .intro-statement p:first-child { font-size: clamp(.7rem, 3.25vw, .84rem); }
   .audience-grid, .method-grid, .principles-grid { grid-template-columns: 1fr; }
 }
