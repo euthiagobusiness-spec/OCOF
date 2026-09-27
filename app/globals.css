@@ -82,6 +82,8 @@ button{font:inherit}
 .footer-company p:first-of-type{color:#f0f0f0;font-weight:750}
 .footer-company p:last-of-type{max-width:34ch;color:var(--muted)}
 .footer-nav,.footer-legal{display:grid;align-content:start;justify-items:start;gap:.75rem}
+.footer-nav{grid-template-columns:repeat(2,minmax(0,1fr))}
+.footer-nav h2{grid-column:1/-1}
 .footer-nav h2,.footer-legal h2{margin-bottom:.3rem;color:#fff;font-size:.9rem;font-weight:750;letter-spacing:.04em}
 .footer-nav a,.footer-legal a{display:flex;align-items:center;min-height:2.75rem;color:var(--muted);font-size:.92rem;text-decoration:none;transition:color .18s ease}
 .footer-nav a:hover,.footer-legal a:hover,.footer-nav a:focus-visible,.footer-legal a:focus-visible,.legal-back:hover,.legal-back:focus-visible{color:#fff;text-decoration:none;text-shadow:0 0 12px rgba(255,255,255,.58)}
