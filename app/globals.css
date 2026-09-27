@@ -7,13 +7,15 @@ h1,h2,h3{font-family:var(--font-archivo),Arial,sans-serif;font-weight:700;letter
 button{font:inherit}
 ::selection{background:#f0f0f0;color:#000}
 .shell{width:min(calc(100% - 4rem),var(--shell));margin-inline:auto}
-.site-curtain{position:fixed;z-index:20;inset:0 0 auto;padding:1.35rem 0;background:rgba(0,0,0,.84);border-bottom:1px solid rgba(255,255,255,.15);backdrop-filter:blur(18px)}
-.curtain-nav{display:flex;justify-content:space-between;align-items:center;gap:1rem}
-.curtain-nav a{color:#eaeaea;text-decoration:none;text-transform:uppercase;letter-spacing:.15em;font-size:.7rem;font-weight:750;opacity:0;animation:nav-arrive .8s ease forwards}
-.curtain-nav a:nth-child(1){animation-delay:.35s}.curtain-nav a:nth-child(2){animation-delay:.55s}.curtain-nav a:nth-child(3){animation-delay:.75s}.curtain-nav a:nth-child(4){animation-delay:.95s}.curtain-nav a:nth-child(5){animation-delay:1.15s}.curtain-nav a:nth-child(6){animation-delay:1.35s}
+.site-curtain{position:fixed;z-index:20;inset:0 0 auto;padding:1rem 0;background:rgba(8,8,8,0);border-bottom:1px solid transparent;backdrop-filter:blur(0);opacity:0;transform:translateY(-10px);pointer-events:none}
+.site-curtain:focus-within{opacity:1!important;transform:translateY(0)!important;background-color:rgba(8,8,8,.76)!important;border-bottom-color:rgba(255,255,255,.16)!important;backdrop-filter:blur(18px)!important;pointer-events:auto}
+.curtain-inner{display:flex;justify-content:space-between;align-items:center;gap:2rem}
+.curtain-brand{display:block;flex:0 0 5.25rem}
+.curtain-brand img{display:block;width:100%;height:auto}
+.curtain-nav{display:flex;justify-content:flex-end;align-items:center;gap:clamp(1rem,2.1vw,2.4rem)}
+.curtain-nav a{color:#eaeaea;text-decoration:none;text-transform:uppercase;letter-spacing:.15em;font-size:.7rem;font-weight:750}
 .curtain-nav a:hover,.curtain-nav a:focus-visible{color:#fff;text-decoration:underline;text-underline-offset:.4rem}
-.curtain-nav a:focus-visible,.closing-action:focus-visible{outline:2px solid #fff;outline-offset:5px}
-@keyframes nav-arrive{from{opacity:0;transform:translateY(-.5rem)}to{opacity:1;transform:translateY(0)}}
+.curtain-brand:focus-visible,.curtain-nav a:focus-visible,.closing-action:focus-visible{outline:2px solid #fff;outline-offset:5px}
 .chapter{position:relative;min-height:100svh;display:flex;align-items:center;padding-block:clamp(7rem,11vw,10rem);border-top:1px solid var(--line);scroll-margin-top:4rem}
 .chapter h2{max-width:17ch;margin-bottom:clamp(3rem,6vw,6rem);font-size:clamp(2.9rem,6.1vw,6.5rem);line-height:1.02;text-wrap:balance}
 .chapter h3{font-size:clamp(1.5rem,2.6vw,2.5rem);line-height:1.12;text-wrap:balance}

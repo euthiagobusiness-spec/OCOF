@@ -14,19 +14,24 @@
     background-position: center;
   }
 
-  .site-curtain { padding: .5rem 0; }
+  .site-curtain { padding: .45rem 0; }
+  .site-curtain:focus-within { backdrop-filter: blur(12px) !important; }
+  .curtain-inner { gap: .65rem; }
+  .curtain-brand { flex-basis: 3.25rem; }
   .curtain-nav {
     display: grid;
-    grid-template-columns: repeat(6, minmax(0, 1fr));
-    gap: 0;
+    flex: 1;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0 .35rem;
+    justify-content: end;
     text-align: center;
   }
   .curtain-nav a {
     display: grid;
     place-items: center;
-    min-height: 2.75rem;
-    font-size: clamp(.53rem, 2.4vw, .63rem);
-    letter-spacing: .02em;
+    min-height: 1.75rem;
+    font-size: clamp(.52rem, 2.1vw, .65rem);
+    letter-spacing: .045em;
   }
 
   .chapter {
