@@ -18,16 +18,9 @@ export function HeroSection() {
     resetOpeningPosition();
     window.addEventListener("pageshow", resetOpeningPosition);
 
-    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
-    if (reducedMotion.matches) {
-      video.pause();
-      setFinished(true);
-      setVideoFailed(true);
-      return () => window.removeEventListener("pageshow", resetOpeningPosition);
-    }
-
     video.currentTime = 0;
-    video.muted = false;
+    const mobileOpening = window.matchMedia("(orientation: portrait)").matches;
+    video.muted = mobileOpening;
     video.volume = 1;
     void video.play().catch(() => {
       video.muted = true;
@@ -59,6 +52,7 @@ export function HeroSection() {
           ref={videoRef}
           className="hero-video"
           autoPlay
+          muted
           playsInline
           preload="auto"
           onEnded={() => setFinished(true)}
