@@ -10,12 +10,16 @@ export function HeroSection() {
 
   useEffect(() => {
     if (!mobileFallback) return;
+    const revealTimer = window.setTimeout(() => setFinished(true), 6800);
     const timer = window.setTimeout(() => {
       setMobileFallback(false);
       setVideoFailed(true);
       setFinished(true);
     }, 8000);
-    return () => window.clearTimeout(timer);
+    return () => {
+      window.clearTimeout(revealTimer);
+      window.clearTimeout(timer);
+    };
   }, [mobileFallback]);
 
   useEffect(() => {
@@ -83,6 +87,10 @@ export function HeroSection() {
           playsInline
           preload="auto"
           onPlaying={() => setMobileFallback(false)}
+          onTimeUpdate={(event) => {
+            const video = event.currentTarget;
+            if (video.duration - video.currentTime <= 1.2) setFinished(true);
+          }}
           onEnded={() => setFinished(true)}
           onError={() => {
             if (window.matchMedia("(orientation: portrait)").matches) setMobileFallback(true);
