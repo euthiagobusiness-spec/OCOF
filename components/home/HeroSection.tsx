@@ -5,7 +5,7 @@ import { useEffect, useRef, useState } from "react";
 export function HeroSection() {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [finished, setFinished] = useState(false);
-  const [soundEnabled, setSoundEnabled] = useState(false);
+  const [soundEnabled, setSoundEnabled] = useState(true);
 
   const toggleSound = () => {
     const video = videoRef.current;
@@ -18,10 +18,10 @@ export function HeroSection() {
       setSoundEnabled(true);
       setFinished(false);
       void video.play().catch(() => {
-        video.pause();
         video.muted = true;
+        video.volume = 0;
         setSoundEnabled(false);
-        setFinished(true);
+        void video.play().catch(() => setFinished(true));
       });
       return;
     }
@@ -34,8 +34,8 @@ export function HeroSection() {
     if (enableSound) {
       void video.play().catch(() => {
         video.muted = true;
+        video.volume = 0;
         setSoundEnabled(false);
-        setFinished(true);
       });
     }
   };
@@ -51,7 +51,14 @@ export function HeroSection() {
       return;
     }
 
-    void video.play().catch(() => setFinished(true));
+    video.muted = false;
+    video.volume = 1;
+    void video.play().catch(() => {
+      video.muted = true;
+      video.volume = 0;
+      setSoundEnabled(false);
+      void video.play().catch(() => setFinished(true));
+    });
   }, []);
 
   return (
