@@ -7,6 +7,7 @@ export function HeroSection() {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [finished, setFinished] = useState(false);
   const [audioBlocked, setAudioBlocked] = useState(false);
+  const [videoFailed, setVideoFailed] = useState(false);
 
   const playWithSound = () => {
     const video = videoRef.current;
@@ -14,14 +15,14 @@ export function HeroSection() {
 
     video.muted = false;
     video.volume = 1;
-    if (video.ended) video.currentTime = 0;
+    video.currentTime = 0;
+    setFinished(false);
 
     void video.play().then(() => {
       setAudioBlocked(false);
       setFinished(false);
     }).catch(() => {
       setAudioBlocked(true);
-      setFinished(true);
     });
   };
 
@@ -29,20 +30,28 @@ export function HeroSection() {
     const video = videoRef.current;
     if (!video) return;
 
-    const desktopLayout = window.matchMedia("(min-width: 1041px)").matches;
+    const resetOpeningPosition = () => {
+      if (!window.location.hash) window.scrollTo({ top: 0, behavior: "instant" });
+    };
+    window.history.scrollRestoration = "manual";
+    resetOpeningPosition();
+    window.addEventListener("pageshow", resetOpeningPosition);
+
     const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
-    if (desktopLayout || reducedMotion.matches || video.ended) {
+    if (reducedMotion.matches) {
       video.pause();
       setFinished(true);
-      return;
+      setVideoFailed(true);
+      return () => window.removeEventListener("pageshow", resetOpeningPosition);
     }
 
+    video.currentTime = 0;
     video.muted = false;
     video.volume = 1;
     void video.play().catch(() => {
       setAudioBlocked(true);
-      setFinished(true);
     });
+    return () => window.removeEventListener("pageshow", resetOpeningPosition);
   }, []);
 
   return (
@@ -55,17 +64,17 @@ export function HeroSection() {
           playsInline
           preload="auto"
           onEnded={() => setFinished(true)}
-          onError={() => setFinished(true)}
+          onError={() => { setVideoFailed(true); setFinished(true); }}
         >
           <source src="/ocof/motion/003-mobile.mp4" media="(orientation: portrait)" type="video/mp4" />
-          <source src="/ocof/motion/002.mp4" media="(orientation: landscape) and (max-width: 1040px)" type="video/mp4" />
+          <source src="/ocof/motion/002.mp4" media="(orientation: landscape)" type="video/mp4" />
         </video>
-        <picture className={`hero-final-frame${finished ? " is-visible" : ""}`}>
+        <picture className={`hero-final-frame${videoFailed ? " is-visible" : ""}`}>
           <source srcSet="/ocof/motion/003-mobile-final.webp" media="(orientation: portrait)" />
           <img src="/ocof/motion/004-final.webp" alt="" />
         </picture>
       </div>
-      {audioBlocked && (
+      {audioBlocked && !videoFailed && (
         <AudioPlaybackPrompt className="hero-audio-prompt" onClick={playWithSound} />
       )}
       <div className={`hero-inner shell${finished ? " is-ready" : ""}`}>
