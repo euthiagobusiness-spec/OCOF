@@ -39,8 +39,12 @@ export function ScrollReveal() {
       });
     });
 
-    const elements = Array.from(document.querySelectorAll<HTMLElement>("[data-reveal]"));
     const repeaters = Array.from(document.querySelectorAll<HTMLElement>("[data-reveal-repeat]"));
+    const elements = Array.from(document.querySelectorAll<HTMLElement>("[data-reveal]"));
+    const groupItems = groups.flatMap((group) => Array.from(group.children) as HTMLElement[]);
+    const revealTargets = Array.from(new Set([...elements, ...groupItems])).filter(
+      (element) => !element.hasAttribute("data-reveal-repeat"),
+    );
     const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     const running = new Set<ReturnType<typeof animate>>();
 
@@ -85,25 +89,16 @@ export function ScrollReveal() {
           if (!entry.isIntersecting) return;
 
           const element = entry.target as HTMLElement;
-          if (element.hasAttribute("data-reveal-group")) {
-            element.classList.add("is-visible");
-            Array.from(element.children).forEach((child, index) => {
-              const item = child as HTMLElement;
-              if (!item.hasAttribute("data-reveal-repeat")) {
-                reveal(item, index * 0.12, index);
-              }
-            });
-          } else {
-            reveal(element);
-          }
+          const group = element.parentElement?.closest<HTMLElement>("[data-reveal-group]");
+          group?.classList.add("is-visible");
+          reveal(element);
           observer.unobserve(element);
         });
       },
-      { threshold: 0.01, rootMargin: "0px 0px 22% 0px" },
+      { threshold: 0, rootMargin: "0px" },
     );
 
-    elements.forEach((element) => observer.observe(element));
-    groups.forEach((group) => observer.observe(group));
+    revealTargets.forEach((element) => observer.observe(element));
 
     const repeatControls = new Map<HTMLElement, ReturnType<typeof animate>>();
     const repeatObserver = new IntersectionObserver(
@@ -144,7 +139,7 @@ export function ScrollReveal() {
           });
         });
       },
-      { threshold: 0.28, rootMargin: "-8% 0px -8% 0px" },
+      { threshold: 0, rootMargin: "0px" },
     );
 
     repeaters.forEach((element) => repeatObserver.observe(element));
