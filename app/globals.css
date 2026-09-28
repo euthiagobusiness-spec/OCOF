@@ -27,9 +27,9 @@ button{font:inherit}
 .chapter-intro{z-index:2;min-height:100svh;padding:0;background:#000}
 .hero-inner{min-height:100svh;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:clamp(1.75rem,4.5vh,3.5rem);padding-top:5.25rem;padding-bottom:4.5rem;text-align:center}
 .hero-logo{display:block;width:min(62vw,34rem);height:auto;mix-blend-mode:screen;opacity:0;clip-path:inset(0 50% 0 50%);animation:logo-open 2.2s cubic-bezier(.2,.65,.2,1) .2s forwards}
-.hero-inner h1{width:100%;max-width:38ch;font-size:clamp(2.4rem,5vw,4.5rem);line-height:1.04;text-wrap:balance;opacity:0;animation:headline-arrive 1.2s ease 1.5s forwards}
+.hero-inner h1{width:100%;max-width:38ch;font-size:clamp(2.4rem,5vw,4.5rem);line-height:1.04;text-wrap:balance;opacity:0;-webkit-mask-image:linear-gradient(90deg,#000 55%,transparent 60%);mask-image:linear-gradient(90deg,#000 55%,transparent 60%);-webkit-mask-size:250% 100%;mask-size:250% 100%;-webkit-mask-position:100% 0;mask-position:100% 0;-webkit-mask-repeat:no-repeat;mask-repeat:no-repeat;animation:headline-arrive 1.2s ease 1.5s forwards}
 @keyframes logo-open{0%{opacity:0;clip-path:inset(0 50% 0 50%);transform:scale(.88)}35%{opacity:1}100%{opacity:1;clip-path:inset(0 0 0 0);transform:scale(1)}}
-@keyframes headline-arrive{from{opacity:0;transform:translateY(1.5rem)}to{opacity:1;transform:translateY(0)}}
+@keyframes headline-arrive{0%{opacity:0;-webkit-mask-position:100% 0;mask-position:100% 0}20%{opacity:1}100%{opacity:1;-webkit-mask-position:0 0;mask-position:0 0}}
 .office-backdrop{position:fixed;z-index:0;inset:0;background-image:linear-gradient(rgba(0,0,0,.86),rgba(0,0,0,.91)),url('/ocof/ocof-office-editorial-warm-2026.webp');background-position:center;background-size:cover;pointer-events:none}
 .story{position:relative;z-index:1}
 .story .chapter{background:linear-gradient(180deg,rgba(0,0,0,.24),rgba(20,20,20,.16) 48%,rgba(0,0,0,.26))}
@@ -117,4 +117,4 @@ button{font:inherit}
 .skip-link{position:fixed;z-index:30;top:.5rem;left:.5rem;padding:.7rem 1rem;transform:translateY(-160%);border-radius:.4rem;background:#fff;color:#000}
 .skip-link:focus{transform:translateY(0);box-shadow:0 10px 35px rgba(255,255,255,.2)}
 @media(prefers-reduced-motion:reduce){.closing-action,.closing-action::before,.footer-nav a,.footer-legal a{transition:none}}
-@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.site-curtain,.curtain-nav,.curtain-brand{transition:none}.curtain-nav a,.hero-logo,.hero-inner h1,.artifact{animation:none;opacity:1;transform:none;clip-path:none}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.site-curtain,.curtain-nav,.curtain-brand{transition:none}.curtain-nav a,.hero-logo,.hero-inner h1,.artifact{animation:none;opacity:1;transform:none;clip-path:none}.hero-inner h1{-webkit-mask:none;mask:none}}
