@@ -15,7 +15,7 @@ export function HeroSection() {
 
   useEffect(() => {
     if (!mobileFallback) return;
-    const revealTimer = window.setTimeout(() => setFinished(true), 6800);
+    const revealTimer = window.setTimeout(() => setFinished(true), 5500);
     const timer = window.setTimeout(() => {
       setMobileFallback(false);
       setVideoFailed(true);
@@ -95,7 +95,7 @@ export function HeroSection() {
           onPlaying={() => setMobileFallback(false)}
           onTimeUpdate={(event) => {
             const video = event.currentTarget;
-            if (video.duration - video.currentTime <= 1.2) setFinished(true);
+            if (video.duration - video.currentTime <= 2.5) setFinished(true);
           }}
           onEnded={() => setFinished(true)}
           onError={() => {
