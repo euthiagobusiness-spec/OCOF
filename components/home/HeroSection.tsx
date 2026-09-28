@@ -68,7 +68,7 @@ export function HeroSection() {
           onError={() => setFinished(true)}
         >
           <source src="/ocof/motion/003-mobile.mp4" media="(orientation: portrait)" type="video/mp4" />
-          <source src="/ocof/motion/004.mp4" type="video/mp4" />
+          <source src="/ocof/motion/002.mp4" type="video/mp4" />
         </video>
         <picture className={`hero-final-frame${finished ? " is-visible" : ""}`}>
           <source srcSet="/ocof/motion/003-mobile-final.webp" media="(orientation: portrait)" />
