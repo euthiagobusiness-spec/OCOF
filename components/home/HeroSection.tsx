@@ -6,6 +6,17 @@ export function HeroSection() {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [finished, setFinished] = useState(false);
   const [videoFailed, setVideoFailed] = useState(false);
+  const [mobileFallback, setMobileFallback] = useState(false);
+
+  useEffect(() => {
+    if (!mobileFallback) return;
+    const timer = window.setTimeout(() => {
+      setMobileFallback(false);
+      setVideoFailed(true);
+      setFinished(true);
+    }, 8000);
+    return () => window.clearTimeout(timer);
+  }, [mobileFallback]);
 
   useEffect(() => {
     const video = videoRef.current;
@@ -25,13 +36,28 @@ export function HeroSection() {
     void video.play().catch(() => {
       video.muted = true;
       void video.play().catch(() => {
-        setVideoFailed(true);
-        setFinished(true);
+        if (mobileOpening) setMobileFallback(true);
+        else {
+          setVideoFailed(true);
+          setFinished(true);
+        }
       });
     });
 
+    const stallTimer = window.setTimeout(() => {
+      if (mobileOpening && !video.ended && video.currentTime < 0.25) {
+        setMobileFallback(true);
+      }
+    }, 2000);
+
     const enableSound = () => {
       video.muted = false;
+      if (video.paused && !video.ended) {
+        video.currentTime = 0;
+        void video.play().then(() => setMobileFallback(false)).catch(() => {
+          video.muted = true;
+        });
+      }
       window.removeEventListener("pointerdown", enableSound);
       window.removeEventListener("keydown", enableSound);
     };
@@ -42,6 +68,7 @@ export function HeroSection() {
       window.removeEventListener("pageshow", resetOpeningPosition);
       window.removeEventListener("pointerdown", enableSound);
       window.removeEventListener("keydown", enableSound);
+      window.clearTimeout(stallTimer);
     };
   }, []);
 
@@ -55,12 +82,17 @@ export function HeroSection() {
           muted
           playsInline
           preload="auto"
+          onPlaying={() => setMobileFallback(false)}
           onEnded={() => setFinished(true)}
-          onError={() => { setVideoFailed(true); setFinished(true); }}
+          onError={() => {
+            if (window.matchMedia("(orientation: portrait)").matches) setMobileFallback(true);
+            else { setVideoFailed(true); setFinished(true); }
+          }}
         >
           <source src="/ocof/motion/003-mobile.mp4" media="(orientation: portrait)" type="video/mp4" />
           <source src="/ocof/motion/002.mp4" media="(orientation: landscape)" type="video/mp4" />
         </video>
+        {mobileFallback && <img className="hero-mobile-fallback" src="/ocof/motion/003-mobile-fallback.gif" alt="" />}
         <picture className={`hero-final-frame${videoFailed ? " is-visible" : ""}`}>
           <source srcSet="/ocof/motion/003-mobile-final.webp" media="(orientation: portrait)" />
           <img src="/ocof/motion/004-final.webp" alt="" />
