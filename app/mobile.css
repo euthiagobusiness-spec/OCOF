@@ -45,7 +45,7 @@
   .hero-inner {
     min-height: 100svh;
   }
-  .hero-inner h1 { top: 65%; max-width: 100%; font-size: clamp(1.1rem, 5.8vw, 2.15rem); }
+  .hero-inner h1 { top: 68%; max-width: 100%; font-size: clamp(1rem, 4.9vw, 1.8rem); }
   .motion-video-card { width: 100%; margin-top: 1.5rem; border-radius: .75rem; }
 
   .chapter h2 {

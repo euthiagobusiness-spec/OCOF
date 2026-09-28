@@ -42,7 +42,10 @@ export function HeroSection() {
         </picture>
       </div>
       <div className={`hero-inner shell${finished ? " is-ready" : ""}`}>
-        <h1>Transformamos o valor que existe em crescimento exponencial</h1>
+        <h1>
+          Transformamos o valor que existe em crescimento exponencial
+          <span aria-hidden="true">Transformamos o valor que existe em crescimento exponencial</span>
+        </h1>
       </div>
     </section>
   );
