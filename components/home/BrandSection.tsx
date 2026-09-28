@@ -4,13 +4,7 @@ export function BrandSection() {
   return (
     <section className="chapter" id="ocof">
       <div className="shell">
-        <div className="manifesto-layout">
-          <div className="intro-statement glass-panel" data-reveal>
-            <p>Ousadia • Constância • Organização • Foco</p>
-            <p>Este é o ambiente de construção da OCOF.</p>
-            <p>Aqui valorizamos execução acima de intenção, responsabilidade acima de desculpas e crescimento acima da zona de conforto.</p>
-            <p>Cada projeto, lançamento e operação deve refletir os princípios que sustentam a empresa: ousadia para criar, constância para evoluir, organização para escalar e foco para entregar resultados.</p>
-          </div>
+        <div className="manifesto-layout manifesto-layout--showcase">
           <div className="artifact-showcase">
             <div className="artifact-gallery" aria-hidden="true">
               <div className="artifact artifact-primary"><Image src="/ocof/hero-collage.jpg" alt="" fill sizes="(max-width: 700px) 70vw, 27vw" /></div>
