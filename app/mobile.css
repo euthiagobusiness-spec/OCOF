@@ -46,6 +46,7 @@
     min-height: 100svh;
   }
   .hero-inner h1 { top: 71%; max-width: 100%; font-size: clamp(1rem, 4.9vw, 1.8rem); }
+  .hero-sound-toggle { right: 1rem; bottom: max(.9rem, env(safe-area-inset-bottom)); width: 2.6rem; height: 2.6rem; }
   .motion-video-card { width: 100%; margin-top: 1.5rem; border-radius: .75rem; }
   .story #como-atuamos { padding-bottom: 0; }
   .story .video-feature { min-height: 0; padding-block: 0 1.6rem; }
