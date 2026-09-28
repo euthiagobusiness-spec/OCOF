@@ -24,7 +24,7 @@ export function CultureSection() {
           </div>
           <div className="closing-side">
             <IntroStatement className="intro-statement--mobile" />
-            <ScrollVideoCard src="/ocof/motion/002.mp4" poster="/ocof/motion/002-poster.webp" className="motion-video-card--culture" soundOnDesktop freezeAtEnd />
+            <ScrollVideoCard src="/ocof/motion/002.mp4" poster="/ocof/motion/002-poster.webp" className="motion-video-card--culture" freezeAtEnd />
           </div>
         </div>
       </div>

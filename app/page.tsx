@@ -25,7 +25,7 @@ export default function HomePage() {
           <CardGridSection id="gargalos" title="Resolvemos os gargalos que limitam o crescimento." gridClassName="blockers-grid" items={blockers} />
           <SolutionsSection />
           <CardGridSection id="como-atuamos" title="Desenvolvemos o que cada realidade exige." gridClassName="method-grid" items={method} />
-          <section className="chapter video-feature" aria-hidden="true">
+          <section className="chapter video-feature">
             <div className="shell">
               <ScrollVideoCard src="/ocof/motion/001.mp4" poster="/ocof/motion/001-poster.webp" className="motion-video-card--method" />
             </div>

@@ -1,43 +1,28 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { AudioPlaybackPrompt } from "@/components/ui/AudioPlaybackPrompt";
 
 export function HeroSection() {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [finished, setFinished] = useState(false);
-  const [soundEnabled, setSoundEnabled] = useState(true);
+  const [audioBlocked, setAudioBlocked] = useState(false);
 
-  const toggleSound = () => {
+  const playWithSound = () => {
     const video = videoRef.current;
     if (!video) return;
 
-    if (finished) {
-      video.currentTime = 0;
-      video.muted = false;
-      video.volume = 1;
-      setSoundEnabled(true);
+    video.muted = false;
+    video.volume = 1;
+    if (video.ended) video.currentTime = 0;
+
+    void video.play().then(() => {
+      setAudioBlocked(false);
       setFinished(false);
-      void video.play().catch(() => {
-        video.muted = true;
-        video.volume = 0;
-        setSoundEnabled(false);
-        void video.play().catch(() => setFinished(true));
-      });
-      return;
-    }
-
-    const enableSound = !soundEnabled;
-    video.muted = !enableSound;
-    video.volume = enableSound ? 1 : 0;
-    setSoundEnabled(enableSound);
-
-    if (enableSound) {
-      void video.play().catch(() => {
-        video.muted = true;
-        video.volume = 0;
-        setSoundEnabled(false);
-      });
-    }
+    }).catch(() => {
+      setAudioBlocked(true);
+      setFinished(true);
+    });
   };
 
   useEffect(() => {
@@ -55,10 +40,8 @@ export function HeroSection() {
     video.muted = false;
     video.volume = 1;
     void video.play().catch(() => {
-      video.muted = true;
-      video.volume = 0;
-      setSoundEnabled(false);
-      void video.play().catch(() => setFinished(true));
+      setAudioBlocked(true);
+      setFinished(true);
     });
   }, []);
 
@@ -69,7 +52,6 @@ export function HeroSection() {
           ref={videoRef}
           className="hero-video"
           autoPlay
-          muted={!soundEnabled}
           playsInline
           preload="auto"
           onEnded={() => setFinished(true)}
@@ -83,31 +65,15 @@ export function HeroSection() {
           <img src="/ocof/motion/004-final.webp" alt="" />
         </picture>
       </div>
+      {audioBlocked && (
+        <AudioPlaybackPrompt className="hero-audio-prompt" onClick={playWithSound} />
+      )}
       <div className={`hero-inner shell${finished ? " is-ready" : ""}`}>
         <h1>
           Transformamos o valor que existe em crescimento exponencial
           <span aria-hidden="true">Transformamos o valor que existe em crescimento exponencial</span>
         </h1>
       </div>
-      <button
-        className="hero-sound-toggle"
-        type="button"
-        onClick={toggleSound}
-        aria-label={finished ? "Reproduzir vídeo com som" : soundEnabled ? "Desativar som do vídeo" : "Ativar som do vídeo"}
-        aria-pressed={!finished && soundEnabled}
-      >
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-          <path d="M11 5 6 9H3v6h3l5 4V5Z" />
-          {soundEnabled && !finished ? (
-            <>
-              <path d="M15.5 8.5a5 5 0 0 1 0 7" />
-              <path d="M19 5a10 10 0 0 1 0 14" />
-            </>
-          ) : (
-            <path d="m16 9 5 6m0-6-5 6" />
-          )}
-        </svg>
-      </button>
     </section>
   );
 }
