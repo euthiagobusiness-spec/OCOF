@@ -45,7 +45,7 @@ button{font:inherit}
 .hero-inner.is-ready h1 span{animation:headline-shine 3s ease .35s both}
 @keyframes headline-arrive{0%{opacity:0;-webkit-mask-position:100% 0;mask-position:100% 0}35%{opacity:.55}100%{opacity:1;-webkit-mask-position:0 0;mask-position:0 0}}
 @keyframes headline-shine{0%{opacity:0;background-position:100% 0}20%,68%{opacity:.75}100%{opacity:0;background-position:0 0}}
-.office-backdrop{position:fixed;z-index:0;inset:0;background-image:linear-gradient(rgba(0,0,0,.86),rgba(0,0,0,.91)),url('/ocof/ocof-office-editorial-warm-2026.webp');background-position:center;background-size:cover;pointer-events:none}
+.office-backdrop{position:fixed;z-index:0;inset:0;background-image:linear-gradient(rgba(0,0,0,.825),rgba(0,0,0,.875)),url('/ocof/ocof-office-editorial-warm-2026.webp');background-position:center;background-size:cover;pointer-events:none}
 .story{position:relative;z-index:1}
 .story .chapter{padding-block:clamp(4rem,5.5vw,5.5rem);background:linear-gradient(180deg,rgba(0,0,0,.24),rgba(20,20,20,.16) 48%,rgba(0,0,0,.26))}
 .story .chapter-intro{background:#000}
