@@ -1,30 +1,11 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { AudioPlaybackPrompt } from "@/components/ui/AudioPlaybackPrompt";
 
 export function HeroSection() {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [finished, setFinished] = useState(false);
-  const [audioBlocked, setAudioBlocked] = useState(false);
   const [videoFailed, setVideoFailed] = useState(false);
-
-  const playWithSound = () => {
-    const video = videoRef.current;
-    if (!video) return;
-
-    video.muted = false;
-    video.volume = 1;
-    video.currentTime = 0;
-    setFinished(false);
-
-    void video.play().then(() => {
-      setAudioBlocked(false);
-      setFinished(false);
-    }).catch(() => {
-      setAudioBlocked(true);
-    });
-  };
 
   useEffect(() => {
     const video = videoRef.current;
@@ -49,9 +30,26 @@ export function HeroSection() {
     video.muted = false;
     video.volume = 1;
     void video.play().catch(() => {
-      setAudioBlocked(true);
+      video.muted = true;
+      void video.play().catch(() => {
+        setVideoFailed(true);
+        setFinished(true);
+      });
     });
-    return () => window.removeEventListener("pageshow", resetOpeningPosition);
+
+    const enableSound = () => {
+      video.muted = false;
+      window.removeEventListener("pointerdown", enableSound);
+      window.removeEventListener("keydown", enableSound);
+    };
+    window.addEventListener("pointerdown", enableSound);
+    window.addEventListener("keydown", enableSound);
+
+    return () => {
+      window.removeEventListener("pageshow", resetOpeningPosition);
+      window.removeEventListener("pointerdown", enableSound);
+      window.removeEventListener("keydown", enableSound);
+    };
   }, []);
 
   return (
@@ -74,9 +72,6 @@ export function HeroSection() {
           <img src="/ocof/motion/004-final.webp" alt="" />
         </picture>
       </div>
-      {audioBlocked && !videoFailed && (
-        <AudioPlaybackPrompt className="hero-audio-prompt" onClick={playWithSound} />
-      )}
       <div className={`hero-inner shell${finished ? " is-ready" : ""}`}>
         <h1>
           Transformamos o valor que existe em crescimento exponencial
