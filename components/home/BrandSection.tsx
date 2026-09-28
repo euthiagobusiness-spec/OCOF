@@ -1,10 +1,12 @@
 import Image from "next/image";
+import { IntroStatement } from "@/components/home/IntroStatement";
 
 export function BrandSection() {
   return (
     <section className="chapter" id="ocof">
       <div className="shell">
         <div className="manifesto-layout manifesto-layout--showcase">
+          <IntroStatement className="intro-statement--desktop" />
           <div className="artifact-showcase">
             <div className="artifact-gallery" aria-hidden="true">
               <div className="artifact artifact-primary"><Image src="/ocof/hero-collage.jpg" alt="" fill sizes="(max-width: 700px) 70vw, 27vw" /></div>

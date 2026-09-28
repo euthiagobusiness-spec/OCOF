@@ -1,5 +1,7 @@
 import { principles } from "@/components/content/site-content";
 import { InteractiveCTA } from "@/components/ui/InteractiveCTA";
+import { ScrollVideoCard } from "@/components/ui/ScrollVideoCard";
+import { IntroStatement } from "@/components/home/IntroStatement";
 
 export function CultureSection() {
   return (
@@ -20,11 +22,9 @@ export function CultureSection() {
             <p>Descubra o que está limitando seu crescimento e construa com a OCOF o que falta para ir além.</p>
             <InteractiveCTA />
           </div>
-          <div className="intro-statement glass-panel" data-reveal>
-            <p>Ousadia • Constância • Organização • Foco</p>
-            <p>Este é o ambiente de construção da OCOF.</p>
-            <p>Aqui valorizamos execução acima de intenção, responsabilidade acima de desculpas e crescimento acima da zona de conforto.</p>
-            <p>Cada projeto, lançamento e operação deve refletir os princípios que sustentam a empresa: ousadia para criar, constância para evoluir, organização para escalar e foco para entregar resultados.</p>
+          <div className="closing-side">
+            <IntroStatement className="intro-statement--mobile" />
+            <ScrollVideoCard src="/ocof/motion/002.mp4" poster="/ocof/motion/002-poster.webp" className="motion-video-card--culture" />
           </div>
         </div>
       </div>

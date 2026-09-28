@@ -57,7 +57,7 @@ export function ScrollReveal() {
           transform: [initialTransform(element, index), "translate3d(0, 0, 0)"],
           filter: ["blur(8px)", "blur(0px)"],
         },
-        { duration: revealDuration, delay, ease: revealEase },
+        { duration: element.matches(".motion-video-card") ? 1.2 : revealDuration, delay, ease: revealEase },
       );
       running.add(controls);
       void controls.then(() => {

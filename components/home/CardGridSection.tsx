@@ -1,3 +1,5 @@
+import type { ReactNode } from "react";
+
 type Item = readonly [title: string, description: string];
 
 type CardGridSectionProps = {
@@ -5,9 +7,10 @@ type CardGridSectionProps = {
   title: string;
   gridClassName: string;
   items: readonly Item[];
+  children?: ReactNode;
 };
 
-export function CardGridSection({ id, title, gridClassName, items }: CardGridSectionProps) {
+export function CardGridSection({ id, title, gridClassName, items, children }: CardGridSectionProps) {
   return (
     <section className="chapter" id={id}>
       <div className="shell">
@@ -20,6 +23,7 @@ export function CardGridSection({ id, title, gridClassName, items }: CardGridSec
             </article>
           ))}
         </div>
+        {children}
       </div>
     </section>
   );
