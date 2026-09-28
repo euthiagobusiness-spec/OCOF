@@ -33,16 +33,17 @@ export function Footer() {
           ))}
         </nav>
 
-        <nav className="footer-legal" aria-label="Informações legais">
-          <h2>Privacidade e licença</h2>
-          {legalLinks.map(([label, href]) => (
-            <a key={href} href={href}>{label}</a>
-          ))}
-        </nav>
-      </div>
-
-      <div className="shell footer-bottom">
-        <p>© {new Date().getFullYear()} OCOF. Todos os direitos reservados.</p>
+        <div className="footer-legal-column">
+          <nav className="footer-legal" aria-label="Informações legais">
+            <h2>Privacidade e licença</h2>
+            {legalLinks.map(([label, href]) => (
+              <a key={href} href={href}>{label}</a>
+            ))}
+          </nav>
+          <div className="footer-bottom">
+            <p>© {new Date().getFullYear()} OCOF. Todos os direitos reservados.</p>
+          </div>
+        </div>
       </div>
     </footer>
   );
