@@ -44,8 +44,9 @@ export function HeroSection() {
     const video = videoRef.current;
     if (!video) return;
 
+    const desktopLayout = window.matchMedia("(min-width: 1041px)").matches;
     const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
-    if (reducedMotion.matches || video.ended) {
+    if (desktopLayout || reducedMotion.matches || video.ended) {
       video.pause();
       setFinished(true);
       return;
@@ -75,7 +76,7 @@ export function HeroSection() {
           onError={() => setFinished(true)}
         >
           <source src="/ocof/motion/003-mobile.mp4" media="(orientation: portrait)" type="video/mp4" />
-          <source src="/ocof/motion/002.mp4" type="video/mp4" />
+          <source src="/ocof/motion/002.mp4" media="(orientation: landscape) and (max-width: 1040px)" type="video/mp4" />
         </video>
         <picture className={`hero-final-frame${finished ? " is-visible" : ""}`}>
           <source srcSet="/ocof/motion/003-mobile-final.webp" media="(orientation: portrait)" />

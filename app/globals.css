@@ -64,7 +64,13 @@ button{font:inherit}
 .motion-video-card{width:min(100%,43rem);aspect-ratio:16/9;overflow:hidden;margin-top:clamp(1.5rem,3vw,2.5rem);border-radius:1rem;background:#000;box-shadow:0 28px 70px rgba(0,0,0,.48);transition:filter .35s ease,box-shadow .35s ease,transform .35s ease}
 .motion-video-card video{display:block;width:100%;height:100%;object-fit:cover}
 .motion-video-card--method{margin-left:auto}
-.motion-video-card--culture{width:100%;margin:0}
+.motion-video-card--culture{position:relative;width:100%;margin:0}
+.motion-video-sound-toggle{position:absolute;z-index:2;top:1rem;right:1rem;display:grid;place-items:center;width:2.75rem;height:2.75rem;padding:0;border:0;border-radius:50%;background:rgba(255,255,255,.12);color:#f4f4f4;box-shadow:0 10px 26px rgba(0,0,0,.42);backdrop-filter:blur(10px);cursor:pointer;transition:background .2s ease,transform .2s ease,box-shadow .2s ease}
+.motion-video-sound-toggle svg{width:1.2rem;height:1.2rem}
+.motion-video-sound-toggle:hover{background:rgba(255,255,255,.2);transform:scale(1.05)}
+.motion-video-sound-toggle:focus-visible{outline:none;box-shadow:0 0 0 .2rem rgba(255,255,255,.4),0 10px 26px rgba(0,0,0,.42)}
+@media(max-width:1040px){.motion-video-sound-toggle{display:none}}
+@media(min-width:1041px){.hero-video,.hero-sound-toggle{display:none}}
 @media(min-width:1041px){.story .video-feature{min-height:100svh;padding-block:0}.video-feature .shell{display:grid;width:100%;max-width:none;padding-inline:4vw;place-items:center}.video-feature .motion-video-card--method{position:relative;left:auto;width:min(92vw,155svh);margin:0}}
 @keyframes artifact-float-primary{0%,100%{transform:translate3d(0,0,0) rotate(-4deg)}50%{transform:translate3d(0,-10px,0) rotate(-2deg)}}
 @keyframes artifact-float-secondary{0%,100%{transform:translate3d(0,0,0) rotate(7deg)}50%{transform:translate3d(0,8px,0) rotate(5deg)}}
