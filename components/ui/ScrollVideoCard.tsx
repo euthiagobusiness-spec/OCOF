@@ -7,12 +7,14 @@ type ScrollVideoCardProps = {
   poster: string;
   className?: string;
   soundOnDesktop?: boolean;
+  freezeAtEnd?: boolean;
 };
 
-export function ScrollVideoCard({ src, poster, className = "", soundOnDesktop = false }: ScrollVideoCardProps) {
+export function ScrollVideoCard({ src, poster, className = "", soundOnDesktop = false, freezeAtEnd = false }: ScrollVideoCardProps) {
   const videoRef = useRef<HTMLVideoElement>(null);
   const userChangedSound = useRef(false);
   const soundPreference = useRef(false);
+  const ended = useRef(false);
   const [soundEnabled, setSoundEnabled] = useState(false);
 
   const toggleSound = () => {
@@ -26,7 +28,7 @@ export function ScrollVideoCard({ src, poster, className = "", soundOnDesktop = 
     video.volume = enableSound ? 1 : 0;
     setSoundEnabled(enableSound);
 
-    if (enableSound) {
+    if (enableSound && !(freezeAtEnd && ended.current)) {
       void video.play().catch(() => {
         video.muted = true;
         video.volume = 0;
@@ -45,6 +47,11 @@ export function ScrollVideoCard({ src, poster, className = "", soundOnDesktop = 
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
+          if (freezeAtEnd && ended.current) {
+            video.pause();
+            return;
+          }
+
           const playWithSound = shouldTrySound && (!userChangedSound.current || soundPreference.current);
           video.muted = !playWithSound;
           video.volume = playWithSound ? 1 : 0;
@@ -74,11 +81,25 @@ export function ScrollVideoCard({ src, poster, className = "", soundOnDesktop = 
       observer.disconnect();
       video.pause();
     };
-  }, [soundOnDesktop]);
+  }, [freezeAtEnd, soundOnDesktop]);
+
+  const handleEnded = () => {
+    ended.current = true;
+  };
 
   return (
     <div className={`motion-video-card ${className}`} data-reveal>
-      <video ref={videoRef} src={src} poster={poster} muted={!soundEnabled} playsInline loop preload="none" aria-label="Animação da marca OCOF" />
+      <video
+        ref={videoRef}
+        src={src}
+        poster={poster}
+        muted={!soundEnabled}
+        playsInline
+        loop={!freezeAtEnd}
+        preload="none"
+        aria-label="Animação da marca OCOF"
+        onEnded={freezeAtEnd ? handleEnded : undefined}
+      />
       {soundOnDesktop && (
         <button
           className="motion-video-sound-toggle"
