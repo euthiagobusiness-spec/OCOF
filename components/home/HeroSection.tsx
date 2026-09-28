@@ -1,12 +1,17 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useLayoutEffect, useRef, useState } from "react";
 
 export function HeroSection() {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [finished, setFinished] = useState(false);
   const [videoFailed, setVideoFailed] = useState(false);
   const [mobileFallback, setMobileFallback] = useState(false);
+  const [orientation, setOrientation] = useState<"portrait" | "landscape" | null>(null);
+
+  useLayoutEffect(() => {
+    setOrientation(window.matchMedia("(orientation: portrait)").matches ? "portrait" : "landscape");
+  }, []);
 
   useEffect(() => {
     if (!mobileFallback) return;
@@ -24,7 +29,7 @@ export function HeroSection() {
 
   useEffect(() => {
     const video = videoRef.current;
-    if (!video) return;
+    if (!video || !orientation) return;
 
     const resetOpeningPosition = () => {
       if (!window.location.hash) window.scrollTo({ top: 0, behavior: "instant" });
@@ -34,7 +39,7 @@ export function HeroSection() {
     window.addEventListener("pageshow", resetOpeningPosition);
 
     video.currentTime = 0;
-    const mobileOpening = window.matchMedia("(orientation: portrait)").matches;
+    const mobileOpening = orientation === "portrait";
     video.muted = mobileOpening;
     video.volume = 1;
     void video.play().catch(() => {
@@ -74,16 +79,17 @@ export function HeroSection() {
       window.removeEventListener("keydown", enableSound);
       window.clearTimeout(stallTimer);
     };
-  }, []);
+  }, [orientation]);
 
   return (
     <section className="chapter chapter-intro" id="inicio">
       <div className="hero-film" aria-hidden="true">
-        <video
+        {orientation && <video
           ref={videoRef}
           className="hero-video"
+          src={orientation === "portrait" ? "/ocof/motion/003-mobile.mp4" : "/ocof/motion/002.mp4"}
           autoPlay
-          muted
+          muted={orientation === "portrait"}
           playsInline
           preload="auto"
           onPlaying={() => setMobileFallback(false)}
@@ -93,13 +99,10 @@ export function HeroSection() {
           }}
           onEnded={() => setFinished(true)}
           onError={() => {
-            if (window.matchMedia("(orientation: portrait)").matches) setMobileFallback(true);
+            if (orientation === "portrait") setMobileFallback(true);
             else { setVideoFailed(true); setFinished(true); }
           }}
-        >
-          <source src="/ocof/motion/003-mobile.mp4" media="(orientation: portrait)" type="video/mp4" />
-          <source src="/ocof/motion/002.mp4" media="(orientation: landscape)" type="video/mp4" />
-        </video>
+        />}
         {mobileFallback && <img className="hero-mobile-fallback" src="/ocof/motion/003-mobile-fallback.gif" alt="" />}
         <picture className={`hero-final-frame${videoFailed ? " is-visible" : ""}`}>
           <source srcSet="/ocof/motion/003-mobile-final.webp" media="(orientation: portrait)" />
