@@ -59,6 +59,7 @@ button{font:inherit}
 .motion-video-card video{display:block;width:100%;height:100%;object-fit:cover}
 .motion-video-card--method{margin-left:auto}
 .motion-video-card--culture{width:100%;margin:0}
+@media(min-width:1041px){.story .video-feature{min-height:100svh;padding-block:0}.video-feature .shell{display:grid;width:100%;max-width:none;padding-inline:4vw;place-items:center}.video-feature .motion-video-card--method{position:relative;left:auto;width:min(92vw,155svh);margin:0}}
 @keyframes artifact-float-primary{0%,100%{transform:translate3d(0,0,0) rotate(-4deg)}50%{transform:translate3d(0,-10px,0) rotate(-2deg)}}
 @keyframes artifact-float-secondary{0%,100%{transform:translate3d(0,0,0) rotate(7deg)}50%{transform:translate3d(0,8px,0) rotate(5deg)}}
 @keyframes artifact-float-tertiary{0%,100%{transform:translate3d(0,0,0) rotate(5deg)}50%{transform:translate3d(0,-8px,0) rotate(7deg)}}
