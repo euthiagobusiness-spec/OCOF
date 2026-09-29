@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useLayoutEffect, useRef, useState } from "react";
+import { createPortal } from "react-dom";
 import { AudioPlaybackPrompt } from "@/components/ui/AudioPlaybackPrompt";
 
 export function HeroSection() {
@@ -115,7 +116,7 @@ export function HeroSection() {
           <img src="/ocof/motion/004-final.webp" alt="" />
         </picture>
       </div>
-      {audioBlocked && (
+      {audioBlocked && createPortal(
         <div className={`hero-audio-gate${gateRevealing ? " is-revealing" : ""}`}>
           <AudioPlaybackPrompt
             className="hero-audio-prompt"
@@ -123,7 +124,8 @@ export function HeroSection() {
             ariaLabel="Conheça a OCOF com som"
             onClick={playWithSound}
           />
-        </div>
+        </div>,
+        document.body
       )}
       <div className={`hero-inner shell${finished ? " is-ready" : ""}`}>
         <h1>
