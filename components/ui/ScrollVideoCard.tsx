@@ -1,7 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
-import { AudioPlaybackPrompt } from "@/components/ui/AudioPlaybackPrompt";
+import { useEffect, useRef } from "react";
 
 type ScrollVideoCardProps = {
   src: string;
@@ -13,20 +12,6 @@ type ScrollVideoCardProps = {
 export function ScrollVideoCard({ src, poster, className = "", freezeAtEnd = false }: ScrollVideoCardProps) {
   const videoRef = useRef<HTMLVideoElement>(null);
   const ended = useRef(false);
-  const [audioBlocked, setAudioBlocked] = useState(false);
-
-  const playWithSound = () => {
-    const video = videoRef.current;
-    if (!video) return;
-
-    video.muted = false;
-    video.volume = 1;
-    void video.play().then(() => {
-      setAudioBlocked(false);
-    }).catch(() => {
-      setAudioBlocked(true);
-    });
-  };
 
   useEffect(() => {
     const video = videoRef.current;
@@ -40,16 +25,10 @@ export function ScrollVideoCard({ src, poster, className = "", freezeAtEnd = fal
             return;
           }
 
-          video.muted = false;
-          video.volume = 1;
-          void video.play().then(() => {
-            setAudioBlocked(false);
-          }).catch(() => {
-            setAudioBlocked(true);
-          });
+          video.muted = true;
+          void video.play().catch(() => {});
         } else {
           video.pause();
-          setAudioBlocked(false);
         }
       },
       { threshold: 0.2 },
@@ -73,14 +52,12 @@ export function ScrollVideoCard({ src, poster, className = "", freezeAtEnd = fal
         src={src}
         poster={poster}
         playsInline
+        muted
         loop={!freezeAtEnd}
         preload="none"
-        aria-label="Animação da marca OCOF com som"
+        aria-label="Animação da marca OCOF sem som"
         onEnded={freezeAtEnd ? handleEnded : undefined}
       />
-      {audioBlocked && (
-        <AudioPlaybackPrompt className="motion-video-audio-prompt" onClick={playWithSound} />
-      )}
     </div>
   );
 }
