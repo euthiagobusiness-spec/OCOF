@@ -1,13 +1,38 @@
 "use client";
 
 import { useEffect, useLayoutEffect, useRef, useState } from "react";
+import { AudioPlaybackPrompt } from "@/components/ui/AudioPlaybackPrompt";
 
 export function HeroSection() {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [finished, setFinished] = useState(false);
   const [videoFailed, setVideoFailed] = useState(false);
   const [mobileFallback, setMobileFallback] = useState(false);
+  const [audioBlocked, setAudioBlocked] = useState(false);
   const [orientation, setOrientation] = useState<"portrait" | "landscape" | null>(null);
+
+  const playWithSound = () => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    video.pause();
+    video.currentTime = 0;
+    video.muted = false;
+    video.volume = 1;
+    void video.play().then(() => {
+      setAudioBlocked(false);
+      setFinished(false);
+      setVideoFailed(false);
+      setMobileFallback(false);
+    }).catch(() => {
+      setAudioBlocked(true);
+      video.muted = true;
+      void video.play().catch(() => {
+        if (orientation === "portrait") setMobileFallback(true);
+        else { setVideoFailed(true); setFinished(true); }
+      });
+    });
+  };
 
   useLayoutEffect(() => {
     setOrientation(window.matchMedia("(orientation: portrait)").matches ? "portrait" : "landscape");
@@ -43,6 +68,7 @@ export function HeroSection() {
     video.muted = false;
     video.volume = 1;
     void video.play().catch(() => {
+      setAudioBlocked(true);
       video.muted = true;
       void video.play().catch(() => {
         if (mobileOpening) setMobileFallback(true);
@@ -59,24 +85,8 @@ export function HeroSection() {
       }
     }, 2000);
 
-    const enableSound = () => {
-      video.muted = false;
-      if (video.paused && !video.ended) {
-        video.currentTime = 0;
-        void video.play().then(() => setMobileFallback(false)).catch(() => {
-          video.muted = true;
-        });
-      }
-      window.removeEventListener("pointerdown", enableSound);
-      window.removeEventListener("keydown", enableSound);
-    };
-    window.addEventListener("pointerdown", enableSound);
-    window.addEventListener("keydown", enableSound);
-
     return () => {
       window.removeEventListener("pageshow", resetOpeningPosition);
-      window.removeEventListener("pointerdown", enableSound);
-      window.removeEventListener("keydown", enableSound);
       window.clearTimeout(stallTimer);
     };
   }, [orientation]);
@@ -108,6 +118,7 @@ export function HeroSection() {
           <img src="/ocof/motion/004-final.webp" alt="" />
         </picture>
       </div>
+      {audioBlocked && <AudioPlaybackPrompt className="hero-audio-prompt" onClick={playWithSound} />}
       <div className={`hero-inner shell${finished ? " is-ready" : ""}`}>
         <h1>
           Transformamos o valor que existe em crescimento exponencial
