@@ -9,6 +9,7 @@ export function HeroSection() {
   const [videoFailed, setVideoFailed] = useState(false);
   const [mobileFallback, setMobileFallback] = useState(false);
   const [audioBlocked, setAudioBlocked] = useState(false);
+  const [gateRevealing, setGateRevealing] = useState(false);
   const [orientation, setOrientation] = useState<"portrait" | "landscape" | null>(null);
 
   const playWithSound = () => {
@@ -20,17 +21,19 @@ export function HeroSection() {
     video.muted = false;
     video.volume = 1;
     void video.play().then(() => {
-      setAudioBlocked(false);
       setFinished(false);
       setVideoFailed(false);
       setMobileFallback(false);
+      setGateRevealing(true);
+      window.setTimeout(() => {
+        setAudioBlocked(false);
+        setGateRevealing(false);
+      }, 850);
     }).catch(() => {
       setAudioBlocked(true);
-      video.muted = true;
-      void video.play().catch(() => {
-        if (orientation === "portrait") setMobileFallback(true);
-        else { setVideoFailed(true); setFinished(true); }
-      });
+      setGateRevealing(false);
+      video.pause();
+      video.currentTime = 0;
     });
   };
 
@@ -68,19 +71,13 @@ export function HeroSection() {
     video.muted = false;
     video.volume = 1;
     void video.play().catch(() => {
+      video.pause();
+      video.currentTime = 0;
       setAudioBlocked(true);
-      video.muted = true;
-      void video.play().catch(() => {
-        if (mobileOpening) setMobileFallback(true);
-        else {
-          setVideoFailed(true);
-          setFinished(true);
-        }
-      });
     });
 
     const stallTimer = window.setTimeout(() => {
-      if (mobileOpening && !video.ended && video.currentTime < 0.25) {
+      if (mobileOpening && !video.paused && !video.ended && video.currentTime < 0.25) {
         setMobileFallback(true);
       }
     }, 2000);
@@ -118,7 +115,16 @@ export function HeroSection() {
           <img src="/ocof/motion/004-final.webp" alt="" />
         </picture>
       </div>
-      {audioBlocked && <AudioPlaybackPrompt className="hero-audio-prompt" onClick={playWithSound} />}
+      {audioBlocked && (
+        <div className={`hero-audio-gate${gateRevealing ? " is-revealing" : ""}`}>
+          <AudioPlaybackPrompt
+            className="hero-audio-prompt"
+            label="Conheça a OCOF"
+            ariaLabel="Conheça a OCOF com som"
+            onClick={playWithSound}
+          />
+        </div>
+      )}
       <div className={`hero-inner shell${finished ? " is-ready" : ""}`}>
         <h1>
           Transformamos o valor que existe em crescimento exponencial
