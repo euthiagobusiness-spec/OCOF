@@ -40,7 +40,7 @@ export function HeroSection() {
 
     video.currentTime = 0;
     const mobileOpening = orientation === "portrait";
-    video.muted = mobileOpening;
+    video.muted = false;
     video.volume = 1;
     void video.play().catch(() => {
       video.muted = true;
@@ -89,7 +89,6 @@ export function HeroSection() {
           className="hero-video"
           src={orientation === "portrait" ? "/ocof/motion/003-mobile.mp4" : "/ocof/motion/002.mp4"}
           autoPlay
-          muted={orientation === "portrait"}
           playsInline
           preload="auto"
           onPlaying={() => setMobileFallback(false)}
