@@ -20,7 +20,7 @@ export function Footer() {
       <div className="shell footer-layout">
         <div className="footer-company">
           <a className="footer-wordmark" href="/#inicio" aria-label="OCOF — início">
-            <Image src="/brand/ocof-horizontal.svg" alt="" width={720} height={365} sizes="96px" />
+            <Image src="/brand/ocof-horizontal.png" alt="" width={1033} height={489} sizes="96px" />
           </a>
           <p>Ousadia • Constância • Organização • Foco</p>
           <p>Transformamos o valor que existe em crescimento exponencial</p>

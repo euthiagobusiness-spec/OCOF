@@ -23,7 +23,7 @@ export function LegalPage({
       <header className="legal-header">
         <div className="shell legal-header-inner">
           <a className="legal-wordmark" href="/#inicio" aria-label="OCOF — início">
-            <Image src="/brand/ocof-horizontal.svg" alt="" width={720} height={365} sizes="(max-width: 800px) 72px, 80px" />
+            <Image src="/brand/ocof-horizontal.png" alt="" width={1033} height={489} sizes="(max-width: 800px) 72px, 80px" />
           </a>
           <a className="legal-back" href="/#inicio">Voltar ao site</a>
         </div>
