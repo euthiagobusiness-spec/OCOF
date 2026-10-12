@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import Image from "next/image";
 import { Footer } from "@/components/layout/Footer";
 
 type LegalSection = {
@@ -21,7 +22,9 @@ export function LegalPage({
       <a className="skip-link" href="#conteudo">Pular para o conteúdo</a>
       <header className="legal-header">
         <div className="shell legal-header-inner">
-          <a className="legal-wordmark" href="/#inicio" aria-label="OCOF — início">OCOF</a>
+          <a className="legal-wordmark" href="/#inicio" aria-label="OCOF — início">
+            <Image src="/brand/ocof-horizontal.jpg" alt="" width={720} height={365} sizes="(max-width: 800px) 72px, 80px" />
+          </a>
           <a className="legal-back" href="/#inicio">Voltar ao site</a>
         </div>
       </header>

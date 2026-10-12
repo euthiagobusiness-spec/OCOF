@@ -64,7 +64,7 @@ export function SiteNavigation() {
           aria-hidden={!isScrolled || undefined}
           tabIndex={isScrolled ? 0 : -1}
         >
-          <Image src="/brand/ocof-wordmark.avif" alt="" width={590} height={205} priority />
+          <Image src="/brand/ocof-horizontal.jpg" alt="" width={720} height={365} sizes="(max-width: 640px) 60px, 84px" priority />
         </a>
       </div>
     </header>

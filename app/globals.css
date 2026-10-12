@@ -114,7 +114,8 @@ button{font:inherit}
 .footer-company{display:grid;align-content:start;gap:.8rem;max-width:34rem}
 .footer-wordmark{display:block;width:6rem;line-height:0}
 .footer-wordmark img{display:block;width:100%;height:auto}
-.legal-wordmark{width:max-content;color:#f0f0f0;text-decoration:none;font-family:var(--font-archivo),Arial,sans-serif;font-size:2rem;font-weight:800;letter-spacing:-.07em;line-height:1}
+.legal-wordmark{display:block;flex:none;width:5rem;line-height:0}
+.legal-wordmark img{display:block;width:100%;height:auto}
 .footer-company p:first-of-type{color:#f0f0f0;font-weight:750}
 .footer-company p:last-of-type{max-width:34ch;color:var(--muted)}
 .footer-legal-column{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(7rem,.85fr);align-items:center;gap:clamp(1rem,2vw,2rem);min-width:0}
@@ -129,7 +130,7 @@ button{font:inherit}
 @media(max-width:800px){.footer-layout{grid-template-columns:repeat(2,minmax(0,1fr));gap:2rem 1.25rem}.footer-company,.footer-nav,.footer-legal-column{grid-column:1/-1}.footer-legal-column{grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);align-items:start;gap:1rem}.footer-bottom{font-size:.78rem}}
 .legal-header{position:fixed;z-index:20;inset:0 0 auto;padding:1.1rem 0;background:rgba(0,0,0,.84);backdrop-filter:blur(18px)}
 .legal-header-inner{display:flex;align-items:center;justify-content:space-between;gap:1rem}
-.legal-wordmark{font-size:1.45rem}
+.legal-wordmark{width:4.5rem}
 .legal-back{display:inline-flex;align-items:center;min-height:2.75rem;color:#eaeaea;font-size:.9rem;text-decoration:none}
 .legal-main{position:relative;z-index:1;min-height:75svh;padding:clamp(8rem,12vw,11rem) 0 5rem}
 .legal-document{max-width:56rem}
